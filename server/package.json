@@ -1,0 +1,23 @@
+{
+  "name": "tasty-eats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KellyAtmore/tasty-eats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KellyAtmore/tasty-eats/issues"
+  },
+  "homepage": "https://github.com/KellyAtmore/tasty-eats#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
