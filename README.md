@@ -24,4 +24,4 @@ Team Members: Kelly Atmore, Dominik Wrona, William Wijaya
 
 ## ERD
 
-## Finised App Screenshots
+## Finished App Screenshots
