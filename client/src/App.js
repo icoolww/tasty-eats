@@ -3,7 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-slate-700 App">
+      
       <header className="App-header">
       </header>
     </div>
