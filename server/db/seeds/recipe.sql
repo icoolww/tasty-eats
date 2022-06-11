@@ -38,6 +38,7 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     4. Gently pour the sugar and butter liquid over the crust. Pour slowly so that it does not run off
     5. Bake 15 minutes in the preheated oven. Reduce the temperature to 350 degrees F (175 degrees C)
     6. Continue baking for 35 to 45 minutes, until apples are soft",
+    "image URL",
     "30 minutes",
     "9 slices",
     false
@@ -59,7 +60,8 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     3. Taste and season it with salt and pepper
     4. Cook pasta in a boiling water for 6 1/2 minutes
     5. Toast the cooked pasta in a frying pan together with the basil pesto until it is coated evenly
-    6. Put grated parmesan on the top and ready to eat
+    6. Put grated parmesan on the top and ready to eat",
+    "image URL",
     "90 minutes",
     "1 serving",
     false
@@ -78,15 +80,16 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     1 tbsp Worcestershire sauce,
     1 tsp apple cider vinegar",
     "Directions:
-    1. Heat grill to 350º. Trim fat cap of brisket so there is just a thin, even layer. 
+    1. Heat grill to 350 degrees. Trim fat cap of brisket so there is just a thin, even layer. 
     2. Combine 2 tablespoons each onion powder, garlic powder, sugar, mustard powder, chili powder, and 2 teaspoons salt in a small bowl
     3. Rub evenly over the entire surface of the meat. Let sit at room temperature, uncovered, for 20 minutes
     4. Place the brisket fat-cap-side down over a direct flame and cook until spices are browned, about 10 minutes.
     5. Flip and grill the other side for about another 10 minutes
-    6. Adjust ther frill to 250º, rest the brisket for half hour, then put it back to the grill for 1 hour
+    6. Adjust ther frill to 250 degrees, rest the brisket for half hour, then put it back to the grill for 1 hour
     7. Transfer to cutting board and thent with aluminum foil, rest it for 30 minutes
     8. Combine ketchup, Worcestershire sauce, onion powder, chili powder, garlic powder in it
     9. Microwave for 1 minutes and ready to serve",
+    "image URL",
     "4 hours",
     "8 servings",
     false
@@ -109,9 +112,66 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     1. Preheat oven to 400 degrees. Toss potatoes with 2 tablespoons olive oil, salt and pepper to taste, garlic powder, and 2 teaspoons Italian herb blend
     2. Arrange salmon fillets and asparagus on the sheet pan. Whisk together melted butter, honey, and 1/2 teaspoon remaining Italian herb blend
     3. Drizzle asparagus with remaining 1 tablespoon olive oil, season with salt and pepper to taste and place lemon slices between the asparagus spears",
+    "image URL",
     "60 minutes",
     "4 servings",
     false
     );
 
-  
+
+INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+  VALUES (2, 2, , "Mac n Cheese", 
+    "Ingredients:
+    16 oz macaroni,
+    1 tbsp olive oil,
+    6 tbsp unsalted butter,
+    1/3 tbsp olive oil,
+    3 cups milk,
+    1 cup heavy whipping cream,
+    4 cups cheddar cheese,
+    1 1/2  cups Panko crumbs,
+    1/2 cup Parmesan cheese,
+    1/4 tsp paprika
+    4 tbsp butter",
+    "Directions:
+    1. Preheat oven to 350 degrees. Lightly grease a large 3 qt or 4 qt baking dish and set aside
+    2. Cook the macaroni one minute shy of al dente according to the package instructions. Remove from heat, drain, and place in a large bowl
+    3. Drizzle pasta with olive oil and stir to coat pasta. Set aside to cool while preparing cheese sauce
+    4. Melt butter in a deep saucepan, dutch oven, or stock pot, whisk in flour over medium heat and continue whisking for about 1 minute until bubbly and golden
+    5. Gradually whisk in the milk and heavy cream until nice and smooth, keep whisking until you see bubbles on the surface and then continue cooking and whisking for another 2 minutes
+    6. Add two cups of shredded cheese and whisk until smooth
+    7. Stir in the cooled macaroni until combined and pasta is fully coated with the cheese sauce
+    8. In a small bowl, combine panko crumbs, Parmesan cheese, melted butter and paprika
+    9. Sprinkle over the top and bake until bubbly and golden brown, about 30 minutes",
+    "image URL",
+    "60 minutes",
+    "12 servings",
+    false
+    );
+
+
+    INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+  VALUES (2, 2, , "Tuna Tacos", 
+    "Ingredients:
+    2 canned tuna(8oz),
+    2 sour cream,
+    2 tbsp cream,
+    1 tsp lemon juice,
+    1/4 cup chopped cilantro,
+    1/4 cup chopped onion,
+    4 cups cheddar cheese,
+    1 tsp olive oil,
+    4 pcs corn tortillas,
+    2 tbsp mayonaise",
+    "Directions:
+    1. Whisk together the mayonnaise, sour cream, cream, and lemon juice
+    2. In a separate bowl, stir together the onions and cilantro. Set this garnish and the cream sauce aside for the moment
+    3. Heat oil in a small pan and sauté the tuna, stirring often, until the tuna is heated through and very slightly browned
+    4. If using soft tortillas, heat a griddle over high heat and place them on it. Heat the tortillas, turning once or twice in the process, until they are very hot 
+    5. For hard taco shells, place them on a baking sheet and heat until crispy
+    6. Place 1/4 of the tuna mixture onto each tortilla, then top each with some of the onion-cilantro mix, and a drizzle of cream sauce",
+    "image URL",
+    "60 minutes",
+    "12 servings",
+    false
+    );
