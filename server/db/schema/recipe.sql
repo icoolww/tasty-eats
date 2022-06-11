@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS recipe CASCADE;
+
+CREATE TABLE recipe (
+  id SERIAL PRIMARY KEY NOT NULL,
+  category_id INTEGER NULL REFERENCES category(id) ON DELETE CASCADE,
+  guest_id INTEGER REFERENCES guest(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL,
+  ingredients VARCHAR(255) NOT NULL,
+  directions VARCHAR(255) NOT NULL,
+  image STRING,
+  prep_time VARCHAR(255) NOT NULL,
+  portion_size VARCHAR(255) NOT NULL,
+  favorited BOOLEAN DEFAULT true
+  
+);
