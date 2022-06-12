@@ -1,7 +1,12 @@
-
+import { storage } from "./firebase";
 import './App.css';
 
 function App() {
+  
+  
+  
+  
+  
   return (
     <div className="bg-oatmeal App">
       
