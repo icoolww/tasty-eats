@@ -5,16 +5,18 @@ const router = express.Router();
 
 // handling main homepage
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", (req, res) => {
+  //query the recipe table from the db in order to populate the data needed for the recipe list 
+  db.query(`SELECT * FROM recipe;`)
+    .then((data) => {
+      const recipe = data.rows;
+      res.json({ maps });
+      //this wil change to a res.render that will populate the future ejs template with the correct querry collected info
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 });
-
-// handling create new recipe page
-router.get("/recipes/create", (req, res) => {
-
-  
-});
-
 
 // handling recipe page
 router.get("/:recipeID", (req, res) => {
