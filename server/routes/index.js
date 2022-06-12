@@ -7,16 +7,18 @@ module.exports = (db) => {
 // === GET === //
 
 // handling main homepage
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-// handling create new recipe page
-router.get("/recipes/create", (req, res) => {
-
-  
-});
-
+router.get("/", (req, res) => {
+  //query the recipe table from the db in order to populate the data needed for the recipe list 
+  db.query(`SELECT * FROM recipe;`)
+    .then((data) => {
+      const recipe = data.rows;
+      res.json({ maps });
+      
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 
 // handling recipe page
 router.get("/:recipeID", (req, res) => {
@@ -101,6 +103,6 @@ router.post("/:recipe_id/delete", (req, res) => {
   });
 
   return router;
-};
-
-module.exports = router;
+});
+}
+module.exports = router 
