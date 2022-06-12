@@ -14,12 +14,11 @@ router.get("/", (req, res) => {
     .then((data) => {
       const recipe = data.rows;
       res.json({ maps });
-      //this wil change to a res.render that will populate the future ejs template with the correct querry collected info
+      
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-});
 
 // handling recipe page
 router.get("/:recipeID", (req, res) => {
@@ -104,6 +103,6 @@ router.post("/:recipe_id/delete", (req, res) => {
   });
 
   return router;
-};
-
-module.exports = router;
+});
+}
+module.exports = router 
