@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS recipes CASCADE;
 CREATE TABLE recipes (
   id SERIAL PRIMARY KEY NOT NULL,
   category_id INTEGER NULL REFERENCES categories(id) ON DELETE CASCADE,
-  guest_id INTEGER REFERENCES guests(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
   ingredient TEXT,
   directions TEXT,
