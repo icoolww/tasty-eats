@@ -1,4 +1,4 @@
-INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Tiramisu", 
     "Ingredients:
     1 cup espresso,
@@ -19,10 +19,10 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "30 minutes",
     "12 slices",
-    false
+    "easy"
     );
 
-INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Apple Pie", 
     "Ingredients:
     1/2 cup unsalted butter,
@@ -41,10 +41,10 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "30 minutes",
     "9 slices",
-    false
+    "easy"
     );
 
-  INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+  INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Pesto Basil Pasta", 
     "Ingredients:
     2 1/2 cups fresh basil leaves, washed and dried thoroughly,
@@ -64,10 +64,10 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "90 minutes",
     "1 serving",
-    false
+    "medium"
     );
 
-  INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+  INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "BBQ Brisket", 
     "Ingredients:
     3 lbs brisket (marinated overnight before will be better),
@@ -92,11 +92,11 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "4 hours",
     "8 servings",
-    false
+    "advance"
     );
 
 
-INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Salmon Asparagus", 
     "Ingredients:
     4 pcs fillet salmon,
@@ -115,11 +115,11 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "60 minutes",
     "4 servings",
-    false
+    "medium"
     );
 
 
-INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Mac n Cheese", 
     "Ingredients:
     16 oz macaroni,
@@ -146,11 +146,11 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "60 minutes",
     "12 servings",
-    false
+    "medium"
     );
 
 
-    INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image, prep_time, portion_size, favorited)
+    INSERT INTO recipe (category_id, guest_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, , "Tuna Tacos", 
     "Ingredients:
     2 canned tuna(8oz),
@@ -173,5 +173,5 @@ INSERT INTO recipe (category_id, guest_id, title, ingredients, directions, image
     "image URL",
     "60 minutes",
     "12 servings",
-    false
+    "easy"
     );
