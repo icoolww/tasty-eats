@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+
+module.exports = (db) => {
+
 // === GET === //
 
 // handling main homepage
-
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
@@ -31,7 +33,6 @@ router.get("/:recipeID", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
-
 
 
 // === POST === //
@@ -99,9 +100,7 @@ router.post("/:recipe_id/delete", (req, res) => {
       });
   });
 
-
-
-
-router.listen(5000, () =>{console.log("Server is listening on port 5000")})
+  return router;
+};
 
 module.exports = router;
