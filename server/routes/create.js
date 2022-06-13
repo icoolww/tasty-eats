@@ -7,7 +7,7 @@ module.exports = db => {
   const newMapName = req.body.name;
 
   db.query(
-    `INSERT INTO recipe(name)
+    `INSERT INTO recipes(name)
      VALUES ($1)
      RETURNING *;`,
     [newMapName]

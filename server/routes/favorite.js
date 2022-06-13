@@ -6,7 +6,7 @@ router.post("/favorites", (req, res) => {
   // !MISSING!
 
   db.query(
-    `INSERT INTO favorite_recipe`
+    `INSERT INTO user_favorites`
   )
     // .then runs when DB insert OR guests cookie update is successfull, user gets redirected to the recipe they were on
     .then((data) => {

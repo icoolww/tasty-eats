@@ -4,10 +4,10 @@ module.exports = db => {
 
   router.get("/", (req, res) => {
     //query the recipe table from the db in order to populate the data needed for the recipe list 
-    db.query(`SELECT * FROM recipe;`)
+    db.query(`SELECT * FROM recipes;`)
       .then((data) => {
         const recipe = data.rows;
-        res.json({ recipe });
+        res.json(recipe);
         
       })
       .catch((err) => {

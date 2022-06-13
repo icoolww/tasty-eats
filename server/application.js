@@ -11,6 +11,9 @@ const app = express();
 const db = require("./db");
 
 const recipeRoutes = require("./routes/recipe")(db);
+const mainRoutes = require("./routes/main")(db);
+// const createRoutes = require("./routes/create")(db);
+// const favoriteRoutes = require("./routes/favorite")(db);
 
 // const days = require("./routes/days");
 // const appointments = require("./routes/appointments");
@@ -41,19 +44,19 @@ module.exports = function application(ENV) {
   // app.use("/api", appointments(db, actions.updateAppointment));
   // app.use("/api", interviewers(db));
 
-
-
-
   app.use('/api/data', (req, res) => res.json({
     message: "Testing Message",
   }));
-
 
   app.use('/api/hello', (req, res) => res.json({
     message: "Hello World!",
   }));
 
   app.use('/recipes', recipeRoutes);
+  app.use('/', mainRoutes);
+  // app.use('/create', createRoutes);
+  // app.use('/favorite', favoriteRoutes);
+ 
 
 
   if (ENV === "development" || ENV === "test") {
