@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   db.query(`SELECT * FROM recipe;`)
     .then((data) => {
       const recipe = data.rows;
-      res.json({ maps });
+      res.json({ recipe });
       
     })
     .catch((err) => {
@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 router.get("/:recipeID", (req, res) => {
 
   const recipeID = req.params.recipe_id;
-  db.query(`SELECT * FROM maps WHERE id = ${recipeID};`)
+  db.query(`SELECT * FROM recipes WHERE id = ${recipeID};`)
 
     .then((data) => {
       const recipeData = data.rows;
