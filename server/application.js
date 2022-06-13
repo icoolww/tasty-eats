@@ -10,6 +10,8 @@ const app = express();
 
 const db = require("./db");
 
+const recipeRoutes = require("./routes/recipe")(db);
+
 // const days = require("./routes/days");
 // const appointments = require("./routes/appointments");
 // const interviewers = require("./routes/interviewers");
@@ -50,6 +52,8 @@ module.exports = function application(ENV) {
   app.use('/api/hello', (req, res) => res.json({
     message: "Hello World!",
   }));
+
+  app.use('/recipes', recipeRoutes);
 
 
   if (ENV === "development" || ENV === "test") {
