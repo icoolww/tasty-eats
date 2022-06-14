@@ -1,7 +1,8 @@
 import React from "react";
 
 
-export default function RecipePreview() {
+export default function RecipePreview(props) {
+  // const { title } = props.recipe;
   return (
     <>
     <div className="container mx-auto bg-sunset rounded-[20px] w-60 p-10 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
@@ -11,6 +12,7 @@ export default function RecipePreview() {
   </div>
 </div>
   <h1 className="text-oatmeal font-medium pt-5">Recipe Title</h1>
+  {/* <h1 className="text-oatmeal font-medium pt-5">{title}</h1> */}
   <p className="text-oatmeal text-sm pb-5">category</p>
   <p className="text-oatmeal text-sm">prep time</p>
   <p className="text-oatmeal text-sm pb-10">portion size</p>
