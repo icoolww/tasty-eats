@@ -13,7 +13,8 @@ function App() {
   useEffect(() => {
     axios.get(`/api`).then(
       (res) => {
-        console.log("response", res)
+        console.log("response", res.data)
+       
       }
     )
   }, []);
@@ -23,6 +24,7 @@ function App() {
     <div className="bg-oatmeal App">
       
       <Header />
+      
       <RecipePreview />
     </div>
   );
