@@ -101,22 +101,16 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     '4 hours',
     '8 servings',
     'advance'
-    );
-
-
-INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (3, 2, 'Salmon Asparagus', 
-    'Ingredients:
-    4 pcs fillet salmon,
-    1 pound asparagus,
-    2 pounds baby potatoes,
-    3 tbsp olive oil,
-    2 tbsp butter,
-    2 tbsp honey,
-    1/2 tsp Italian herbs blend,
-    1/2 lemon,
-    1 tsp garlic powder',
+    1 tbsp poppy seeds,
+    1 tbsp minced onion,
+    4 cups cheddar cheese,
+    1/4 tsp paprika,
+    1/4 tsp Worcestershire sauce,
+    1 quart strawberries,
+    10 ounces spinach,
+    1/4 cup almonds',
     'Directions:
+    1. Whisk together sugar, oil, vinegar 
     1. Preheat oven to 400 degrees. Toss potatoes with 2 tablespoons olive oil, salt and pepper to taste, garlic powder, and 2 teaspoons Italian herb blend
     2. Arrange salmon fillets and asparagus on the sheet pan. Whisk together melted butter, honey, and 1/2 teaspoon remaining Italian herb blend
     3. Drizzle asparagus with remaining 1 tablespoon olive oil, season with salt and pepper to taste and place lemon slices between the asparagus spears',
