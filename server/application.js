@@ -52,8 +52,8 @@ module.exports = function application(ENV) {
     message: "Hello World!",
   }));
 
-  app.use('/recipes', recipeRoutes);
-  app.use('/', mainRoutes);
+  app.use('/api/recipes', recipeRoutes);
+  app.use('/api', mainRoutes);
   // app.use('/create', createRoutes);
   // app.use('/favorite', favoriteRoutes);
  
