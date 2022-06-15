@@ -61,12 +61,13 @@ __Database:__ Postgres
 ## Dependencies
 
 - Axios
-- React
+- Firebase
 - Testing-library/jest-dom
 - Testing-library/react
 - Testing-library/user-event
 - React
 - React-dom
+- React-router-dom
 - Web-vitals
 - Autoprefixer
 - Postcss
