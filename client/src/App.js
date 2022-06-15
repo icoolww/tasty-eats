@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import RecipePreview from "./components/RecipePreview";
 import CreateRecipe from "./components/CreateRecipe";
 import Breakfast from "./components/Breakfast";
+import Sidebar from "./components/Sidebar";
 
 function App() {
 
@@ -44,22 +45,14 @@ function App() {
 return (
     <div className="bg-oatmeal App">
       <Header />
+      
 
-    
+    <div className="flex flex-wrap">
       {state.map((recipe) => (
         // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
         <RecipePreview recipe={recipe} />
       ))}
-      <RecipePreview />
-      
-      
-
-      {/* <RecipePreview 
-      //  title = {state.title}
-      //  prep_time = {state.prep_time}
-      //  portion_size = {state.title}
-       
-       /> */}
+      </div>
     </div>
   );
 }

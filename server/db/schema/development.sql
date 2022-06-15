@@ -46,7 +46,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     4. Gently pour the sugar and butter liquid over the crust. Pour slowly so that it does not run off
     5. Bake 15 minutes in the preheated oven. Reduce the temperature to 350 degrees F (175 degrees C)
     6. Continue baking for 35 to 45 minutes, until apples are soft',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/apple_pie.jpg?alt=media&token=b0766ec4-285c-40c3-8922-fce60522c51d',
     '30 minutes',
     '9 slices',
     'easy'
