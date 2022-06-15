@@ -4,13 +4,13 @@ const router = require("express").Router();
 module.exports = db => {
 
  router.post("/create", (req, res) => {
-  const newMapName = req.body.name;
+  const newRecipeName = req.body.name;
 
   db.query(
     `INSERT INTO recipes(name)
      VALUES ($1)
      RETURNING *;`,
-    [newMapName]
+    [newRecipeName]
   )
 
     // .then runs when the above DB insert is successfull, then user is redirected to the recipe they created
@@ -36,8 +36,6 @@ router.post("/:recipe_id/delete", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
-
-
 
 return router;
 };

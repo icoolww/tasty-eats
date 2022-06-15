@@ -1,12 +1,12 @@
 import { storage } from "./firebase";
+import axios from "axios";
 import React, { Component } from 'react';
 import { useState, useEffect } from "react";
 import './App.css';
 import Header from "./components/Header";
 import RecipePreview from "./components/RecipePreview";
-import axios from "axios";
-
-
+import CreateRecipe from "./components/CreateRecipe";
+import Breakfast from "./components/Breakfast";
 
 function App() {
 
@@ -34,6 +34,7 @@ return (
         // <RecipePreview recipe />
       ))}
       <RecipePreview />
+      <CreateRecipe />
     </div>
   );
 }

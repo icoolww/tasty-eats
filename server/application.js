@@ -9,10 +9,11 @@ const cors = require("cors");
 const app = express();
 
 const db = require("./db");
+const { Console } = require("console");
 
 const recipeRoutes = require("./routes/recipe")(db);
 const mainRoutes = require("./routes/main")(db);
-// const createRoutes = require("./routes/create")(db);
+const createRoutes = require("./routes/create")(db);
 // const favoriteRoutes = require("./routes/favorite")(db);
 
 // const days = require("./routes/days");
@@ -54,18 +55,20 @@ module.exports = function application(ENV) {
 
   app.use('/api/recipes', recipeRoutes);
   app.use('/api', mainRoutes);
-  // app.use('/create', createRoutes);
+  app.use('/create', createRoutes);
   // app.use('/favorite', favoriteRoutes);
  
 
 
   if (ENV === "development" || ENV === "test") {
+    console.log(ENV);
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
     ])
       .then(([create, seed]) => {
         app.get("/api/debug/reset", (request, response) => {
+          console.log(create, seed);
           db.query(create)
             .then(() => db.query(seed))
             .then(() => {
@@ -78,7 +81,8 @@ module.exports = function application(ENV) {
         console.log(`Error setting up the reset route: ${error}`);
       });
   }
-
+  
+  
   app.close = function() {
     return db.end();
   };
