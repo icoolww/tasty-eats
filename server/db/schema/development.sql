@@ -24,7 +24,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     4. Beat whipping cream in a separate bowl, then gently fold into the cream cheese mixture
     5. Spread half of the cream to the ladyfinger, then dip remaining ladyfingers, spread the cream, refigerate overnight
     6. Dust with cocoa powder before serving',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/tiramisu.jpg?alt=media&token=7b5f8159-4da1-4ad1-aaa6-3ea90e6278a8',
     '30 minutes',
     '12 slices',
     'easy'
@@ -69,7 +69,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     4. Cook pasta in a boiling water for 6 1/2 minutes
     5. Toast the cooked pasta in a frying pan together with the basil pesto until it is coated evenly
     6. Put grated parmesan on the top and ready to eat',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/pesto_pasta.jpeg?alt=media&token=ab3243b2-663c-4fd8-9307-669696d0f3bb',
     '90 minutes',
     '1 serving',
     'medium'
@@ -97,29 +97,11 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     7. Transfer to cutting board and thent with aluminum foil, rest it for 30 minutes
     8. Combine ketchup, Worcestershire sauce, onion powder, chili powder, garlic powder in it
     9. Microwave for 1 minutes and ready to serve',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/brisket.jpg?alt=media&token=cc4ccead-2115-42e1-8b3a-4e24482525c8',
     '4 hours',
     '8 servings',
     'advance'
-    1 tbsp poppy seeds,
-    1 tbsp minced onion,
-    4 cups cheddar cheese,
-    1/4 tsp paprika,
-    1/4 tsp Worcestershire sauce,
-    1 quart strawberries,
-    10 ounces spinach,
-    1/4 cup almonds',
-    'Directions:
-    1. Whisk together sugar, oil, vinegar 
-    1. Preheat oven to 400 degrees. Toss potatoes with 2 tablespoons olive oil, salt and pepper to taste, garlic powder, and 2 teaspoons Italian herb blend
-    2. Arrange salmon fillets and asparagus on the sheet pan. Whisk together melted butter, honey, and 1/2 teaspoon remaining Italian herb blend
-    3. Drizzle asparagus with remaining 1 tablespoon olive oil, season with salt and pepper to taste and place lemon slices between the asparagus spears',
-    'image URL',
-    '60 minutes',
-    '4 servings',
-    'medium'
-    );
-
+  );
 
 INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (3, 2, 'Mac n Cheese', 
@@ -145,7 +127,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     7. Stir in the cooled macaroni until combined and pasta is fully coated with the cheese sauce
     8. In a small bowl, combine panko crumbs, Parmesan cheese, melted butter and paprika
     9. Sprinkle over the top and bake until bubbly and golden brown, about 30 minutes',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/mac_and_cheese.jpeg?alt=media&token=6d8b9e14-9133-4b29-b655-fd36f2a96182',
     '60 minutes',
     '12 servings',
     'medium'
@@ -172,7 +154,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     4. If using soft tortillas, heat a griddle over high heat and place them on it. Heat the tortillas, turning once or twice in the process, until they are very hot 
     5. For hard taco shells, place them on a baking sheet and heat until crispy
     6. Place 1/4 of the tuna mixture onto each tortilla, then top each with some of the onion-cilantro mix, and a drizzle of cream sauce',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/tuna_tacos.jpeg?alt=media&token=5761d90e-b797-485b-9c6f-622a1cd13b10',
     '60 minutes',
     '12 servings',
     'easy'
@@ -197,7 +179,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     1. Whisk together sugar, oil, vinegar, sesame seeds, poppy seeds, onion, paprika, and Worcestershire in a medium bowl. Cover and chill for 1 hour
     2. Combine strawberries, spinach, and almonds in a large bowl
     3. Pour dressing over salad; toss to coat. Refrigerate for 10 to 15 minutes before serving',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/strawberry_salad.jpg?alt=media&token=875b56ad-b615-4b91-b409-486022b0d0ce',
     '80 minutes',
     '4 servings',
     'easy'
@@ -225,7 +207,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     6. Add the cooked rice into the pan or wok and cook for several minutes, until the rice is heated through
     7. Add the soy sauce, five-spice powder, dash of white pepper (if using) and sesame oil and stir to distribute the seasonings
     8. Add the scrambled eggs and stir to mix again, garnish with remaining sliced scallions',
-    'image URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/fried_rice.jpeg?alt=media&token=f3b7f6bb-6003-49eb-9d9f-efc663f18e5e',
     '45 minutes',
     '4 servings',
     'medium'
