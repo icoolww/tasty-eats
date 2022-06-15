@@ -6,98 +6,113 @@ import { storage } from "../firebase";
 
 export default function CreateRecipe() {
   const [image, setImage] = useState(null)
-  const [inputs, setInputs] = useState({});
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(null);
 
-  
-  //sets the value of the inputs when they are changed 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+  const [title, setTitle] = useState("");
+  const [prep_time, setPrepTime] = useState("");
+  const [portion_size, setPortionSize] = useState("");
+  const [ingredient, setIngredients] = useState("");
+  const [directions, setDirections] = useState("");
+
+
+
+  //function for when the submit is clicked
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleUpload(image)
+    // axios.post("/api/create")
+
   }
 
-//function for when the submit is clicked
-const handleSubmit = (e) => {
-e.preventDefault();
-// axios.post("/api/create")
-console.log(inputs);
-}
+  //image upload
+  const handleImageChange = (e) => {
+    e.preventDefault();
+    const newImage = e.target.files[0]
+    setImage(newImage)
+   
+  }
 
-//image upload
-const handleImageChange = (e) => {
-e.preventDefault();
-const image = e.target.files[0]
-handleUpload(image);
-}
+  const handleUpload = (image) => {
+    if (!image) return;
+    const storageRef = ref(storage, `/images/${image.name}`)
+    const uploadTask = uploadBytesResumable(storageRef, image)
 
-const handleUpload = (image) => {
-if(!image) return;
-const storageRef = ref(storage, `/images/${image.name}`)
-const uploadTask = uploadBytesResumable(storageRef, image)
+    return uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgress(prog);
+      }, (err) => {
+        console.log(err)
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(url => {
+          const newRecipeBody = { 
+            image: url, 
+            title, 
+            prep_time, 
+            portion_size, 
+            directions, 
+            ingredient, 
+            user_id: 1, 
+            category_id: 1, 
+            difficulty: "easy"
+          }
+          axios.post("/api/recipes", newRecipeBody)
+          .then((newRecipe) => console.log("recipe created", newRecipe))
+        })
+      })
+  }
 
-uploadTask.on(
-  "state_changed", 
-(snapshot) => {
-  const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-  setProgress(prog);
-}, (err) => {
-  console.log(err)
-},
-()=> {
-getDownloadURL(uploadTask.snapshot.ref).then( url => setImage(url))
-})
-}
-  console.log(image)
-return (
+
+  return (
     <>
-    {/* <h1 className="text-charcoal font-medium mb-10">Create your recipe below</h1> */}
-    <form className="bg-sunset p-10 m-10 w-1/2 rounded-[20px] outline outline-offset-0 outline-2 outline-charcoal" onSubmit={handleSubmit}>
-    
-    
-    <fieldset>
-         <label>
-           <p>Upload a recipe image</p>
-           <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" value={inputs.image} onChange={handleImageChange} />
-           <button className="bg-oatmeal p-3 m-1 rounded-md"  type="submit" onClick={handleUpload}>upload</button>
-           <h3>uploaded {progress}</h3>
-         </label>
-       </fieldset>
+      {/* <h1 className="text-charcoal font-medium mb-10">Create your recipe below</h1> */}
+      <form className="bg-sunset p-10 m-10 w-1/2 rounded-[20px] outline outline-offset-0 outline-2 outline-charcoal" onSubmit={handleSubmit}>
 
-<fieldset>
-         <label>
-           {/* <p>Recipe Title</p> */}
-           <input className="bg-oatmeal p-2 rounded-md mb-5"  placeholder="recipe title" name="title" value={inputs.title || ""}  onChange={handleChange} />
-         </label>
-       </fieldset>
-       <fieldset>
-         <label>
-           {/* <p>Prep Time</p> */}
-           <input className="bg-oatmeal p-2 rounded-md mb-5"  placeholder="Prep time" name="prep_time" value={inputs.prep_time || ""}  onChange={handleChange} />
-         </label>
-       </fieldset>
-       <fieldset>
-         <label>
-           {/* <p>Portion Size</p> */}
-           <input className="bg-oatmeal p-2 rounded-md mb-5"  placeholder="Portion size" name="portion" value={inputs.portion || ""}  onChange={handleChange} />
-         </label>
-       </fieldset>
-       <fieldset>
-         <label>
-           {/* <p>Ingredients/p> */}
-           <textarea className="bg-oatmeal p-2 rounded-md mb-5 w-full " placeholder="Ingredients" name="ingredients" value={inputs.ingredients || ""} onChange={handleChange} />
-         </label>
-       </fieldset>
-       <fieldset>
-         <label>
-           {/* <p>Directions/p> */}
-           <textarea className="bg-oatmeal p-2 rounded-md mb-5 w-full "  placeholder="Directions" name="directions" onChange={handleChange} />
-         </label>
-       </fieldset>
-      
-       <button className="bg-oatmeal p-3 w-40 rounded-md" type="submit">Save</button>
 
-    </form>
+        <fieldset>
+          <label>
+            <p>Upload a recipe image</p>
+            <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />
+
+            {progress && <h3>uploaded {progress}</h3>}
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label>
+            {/* <p>Recipe Title</p> */}
+            <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="recipe title" name="title" value={title} onChange={(e) => { setTitle(e.target.value) }} />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label>
+            {/* <p>Prep Time</p> */}
+            <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="Prep time" name="prep_time" value={prep_time} onChange={(e) => { setPrepTime(e.target.value) }} />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label>
+            {/* <p>Portion Size</p> */}
+            <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="Portion size" name="portion" value={portion_size} onChange={(e) => { setPortionSize(e.target.value) }} />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label>
+            {/* <p>Ingredients/p> */}
+            <textarea className="bg-oatmeal p-2 rounded-md mb-5 w-full " placeholder="Ingredients" name="ingredients" value={ingredient} onChange={(e) => { setIngredients(e.target.value) }} />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label>
+            {/* <p>Directions/p> */}
+            <textarea className="bg-oatmeal p-2 rounded-md mb-5 w-full " placeholder="Directions" name="directions" value={directions} onChange={(e) => { setDirections(e.target.value) }} />
+          </label>
+        </fieldset>
+        <button className="bg-oatmeal p-3 w-40 rounded-md" type="submit" >Save</button>
+
+      </form>
     </>
   )
 }

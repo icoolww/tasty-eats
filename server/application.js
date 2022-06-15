@@ -55,7 +55,7 @@ module.exports = function application(ENV) {
 
   app.use('/api/recipes', recipeRoutes);
   app.use('/api', mainRoutes);
-  app.use('/create', createRoutes);
+  // app.use('/create', createRoutes);
   // app.use('/favorite', favoriteRoutes);
  
 

@@ -48,11 +48,14 @@ return (
       
 
     <div className="flex flex-wrap">
+    <Sidebar />
       {state.map((recipe) => (
         // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
         <RecipePreview recipe={recipe} />
       ))}
+      
       </div>
+      <CreateRecipe />
     </div>
   );
 }
