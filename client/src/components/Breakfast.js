@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Button from '';
   
@@ -19,8 +20,10 @@ const Breakfast = () => {
       <Button variant="contained" color="secondary">
         Dinner
       </Button>
+      
       <span onClick={onClick} className={classes.selectbutton}>
       {children}
+
     </span>
     </div>
   );
