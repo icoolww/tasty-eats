@@ -57,6 +57,7 @@ function App() {
 
       <div className="flex flex-wrap">
         <Sidebar />
+        
 
         {selectedRecipe ? <RecipeCard recipe={selectedRecipe} /> : filteredRecipe.map((recipe) => (
           // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>

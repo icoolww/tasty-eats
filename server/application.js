@@ -13,12 +13,9 @@ const { Console } = require("console");
 
 const recipeRoutes = require("./routes/recipe")(db);
 const mainRoutes = require("./routes/main")(db);
-// const createRoutes = require("./routes/create")(db);
-// const favoriteRoutes = require("./routes/favorite")(db);
+const categoryRoutes = require("./routes/categories");
+const favoriteRoutes = require("./routes/favorites");
 
-// const days = require("./routes/days");
-// const appointments = require("./routes/appointments");
-// const interviewers = require("./routes/interviewers");
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -41,10 +38,6 @@ module.exports = function application(ENV) {
   app.use(helmet());
   app.use(bodyparser.json());
 
-  // app.use("/api", days(db));
-  // app.use("/api", appointments(db, actions.updateAppointment));
-  // app.use("/api", interviewers(db));
-
   app.use('/api/data', (req, res) => res.json({
     message: "Testing Message",
   }));
@@ -55,8 +48,8 @@ module.exports = function application(ENV) {
 
   app.use('/api/recipes', recipeRoutes);
   app.use('/api', mainRoutes);
-  // app.use('/create', createRoutes);
-  // app.use('/favorite', favoriteRoutes);
+  app.use('/api/categories', categoryRoutes)
+  app.use('/api/favorites', favoriteRoutes);
  
 
 

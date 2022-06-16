@@ -9,6 +9,7 @@ export default function CreateRecipe() {
   const [progress, setProgress] = useState(null);
 
   const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
   const [prep_time, setPrepTime] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [portion_size, setPortionSize] = useState("");
@@ -30,7 +31,7 @@ export default function CreateRecipe() {
     e.preventDefault();
     const newImage = e.target.files[0]
     setImage(newImage)
-   
+
   }
 
   const handleUpload = (image) => {
@@ -48,23 +49,22 @@ export default function CreateRecipe() {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then(url => {
-          const newRecipeBody = { 
-            image: url, 
-            title, 
-            prep_time, 
-            portion_size, 
-            directions, 
-            ingredient, 
-            user_id: 1, 
-            category_id: 1, 
+          const newRecipeBody = {
+            image: url,
+            title,
+            prep_time,
+            portion_size,
+            directions,
+            ingredient,
+            user_id: 1,
+            category_id: 1,
             difficulty
           }
           axios.post("/api/recipes", newRecipeBody)
-          .then((newRecipe) => console.log("recipe created", newRecipe))
+            .then((newRecipe) => console.log("recipe created", newRecipe))
         })
       })
   }
-
 
   return (
     <>
@@ -87,6 +87,18 @@ export default function CreateRecipe() {
             <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="recipe title" name="title" value={title} onChange={(e) => { setTitle(e.target.value) }} />
           </label>
         </fieldset>
+
+        <fieldset>
+          <label>
+            Category:
+            <select value={category} onChange={(e) => { setCategory(e.target.value) }}>
+              <option value="1">Breakfast</option>
+              <option value="2">Lunch</option>
+              <option value="3">Dinner</option>
+            </select>
+          </label>
+        </fieldset>
+
         <fieldset>
           <label>
             {/* <p>Prep Time</p> */}

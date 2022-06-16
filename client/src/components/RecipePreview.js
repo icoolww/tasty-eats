@@ -1,14 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import FavRecipe from "./FavRecipe";
-import DeleteRecipe from "./DeleteRecipe";
 import axios from "axios";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 export default function RecipePreview(props) {
   const { title, prep_time, portion_size, image } = props.recipe || {};
-
+  
+  
+  
   function handleFavRecipe () {
 
   //api call to server to then fav or unfav a recipe
@@ -16,25 +17,6 @@ export default function RecipePreview(props) {
   //will need logic before API call if fav or not
 
   };
-  console.log("props", props.recipe);
-  
-  const handleDelete = (id) => {
-    axios.delete(`/api/recipes/${id}`)
-      .then(result => {
-        
-      })
-      .catch(err => console.error(err));
-  };
-
-  // const handleDelete = (id) => {
-  //   axios.delete(`/api/recipes/${id}`)
-  //     .then(result => {
-        
-  //     })
-  //     .catch(err => console.error(err));
-  // };
-
-  console.log("props", props.recipe);
   // empty object
   return (
     <div className="recipe_container">
@@ -47,6 +29,7 @@ export default function RecipePreview(props) {
           </div>
         </div>
         <h1 className="text-oatmeal font-medium">{title}</h1>
+       
         <div>
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
