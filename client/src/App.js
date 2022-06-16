@@ -16,6 +16,7 @@ function App() {
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [pageState, setPageState] = useState('initial');
 
 
   useEffect(() => {
@@ -49,32 +50,40 @@ function App() {
   //   return <RecipeCard recipe={selectedRecipe} />
   // }
 
+  const content = () => {
+    if (selectedRecipe) return <RecipeCard recipe={selectedRecipe} />;
+    if (pageState === 'createRecipe') return <CreateRecipe />;
+    if (pageState === 'myRecipes') {
+
+      // handling your recipes button
+      return filteredRecipe.map((recipe) => (
+        <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+      ));
+    }
+
+    // handling favorite page
+    if (pageState === 'favorites') {
+      return <div>Favorites</div>;
+    }
+    
+    return filteredRecipe.map((recipe) => (
+      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+    ));
+  }
+
+  const onSidebarChange = (value) => {
+    setSelectedRecipe(null);
+    setPageState(value);
+  }
+
   return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
       
-    
-
       <div className="flex flex-wrap">
-        <Sidebar />
+        <Sidebar onSidebarChange={onSidebarChange} />
 
-        {selectedRecipe ? <RecipeCard recipe={selectedRecipe} /> : filteredRecipe.map((recipe) => (
-          // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
-          <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
-          // onClick={props.onClick}
-        ))}
-
-          {/* <nav>
-            <Link to="/about">About</Link>
-            <br />
-            <Link to="/">Home</Link>
-            <br />
-            <Link to="/recipe">Recipe</Link>
-            <br />
-            <Link to="/favorites">Favorites</Link>
-            <br />
-          </nav> */}
-
+        {content()}
 
       </div>
     </div>
