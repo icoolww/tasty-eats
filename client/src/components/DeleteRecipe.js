@@ -1,13 +1,22 @@
-// const deleterecipe = function(db, recipe) {
-//     let pointValues = [idPoint];
-//     let queryString = `DELETE FROM recipe
-//       WHERE id = $1`;
-//     return (
-//       db
-//         .query(queryString, pointValues)
-//         .then(res => {
-//           return res.rows;
-//         })
-//         .catch(err => console.log(err))
-//     );
-//   };
+import React from "react";
+import axios from "axios";
+// import { useState, useEffect } from "react";
+
+export default function DeleteRecipe(props) {
+
+
+  const handleDelete = (id) => {
+    axios.delete(`/api/recipes/${id}`)
+      .then(result => {
+        
+      })
+      .catch(err => console.error(err));
+  };
+
+  return (
+    <>
+      <button className="bg-oatmeal text-sunset pt-2 pb-2 pl-5 pr-5
+       rounded-full" onClick={() => { handleDelete() }}>Delete</button>
+    </>
+  )
+}

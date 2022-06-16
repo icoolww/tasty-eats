@@ -2,7 +2,7 @@ import { storage } from "./firebase";
 import axios from "axios";
 import React, { Component } from 'react';
 import { useState, useEffect } from "react";
-import {BrowserRouter, Link} from "react-router-dom"
+// import {BrowserRouter, Link} from "react-router-dom"
 import './App.css';
 import Header from "./components/Header";
 import RecipePreview from "./components/RecipePreview";
@@ -16,17 +16,15 @@ function App() {
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  console.log("state", state);
-  // list of all recipe
-
 
   useEffect(() => {
     axios
     // .get(`/api`).then(
       .get(`/api`).then((res)=>{
         const data = res.data;
-      console.log('data', data);
+      // console.log('data', res.data);
       setState(data);
+      
     })
 
   }, []);
@@ -37,7 +35,6 @@ function App() {
   }
 
   const filteredRecipe = filterRecipe();
-
   // const updateRecipe = 
   // call server endpoint to get the data with search value
 
@@ -48,7 +45,7 @@ return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
       
-
+      
     <div className="flex flex-wrap">
     <Sidebar />
       {filteredRecipe.map((recipe) => (
@@ -83,7 +80,6 @@ return (
         </div> */}
       
       </div>
-      <CreateRecipe />
     </div>
   );
 }
