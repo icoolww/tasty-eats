@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import DeleteRecipe from "./DeleteRecipe";
+import axios from "axios";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
@@ -10,21 +11,19 @@ export default function RecipePreview(props) {
     props.onRecipeClick(props.recipe);
   };
 
+  const handleDelete = (id) => {
+    axios.delete(`/api/recipes/${id}`)
+      .then(result => {
+        
+      })
+      .catch(err => console.error(err));
+  };
+
   console.log("props", props.recipe);
   // empty object
   return (
-
-    // <BrowserRouter>
-    //   <nav>
-    //   <Link to="/about">About</Link>
-    //   <br />
-    // </nav>
-    // </BrowserRouter>
-
-
-
-    <div onClick={onClick} className="">
-      <div className=" bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
+    <div onClick={onClick} className="recipe_container">
+      <div className="hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
         <div className="flex justify-center">
           <div className="flex-wrap">
             <img src={image} alt="..." className="recipe_img" />
@@ -35,6 +34,7 @@ export default function RecipePreview(props) {
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
         </div>
+        
       </div>
     </div>
   );

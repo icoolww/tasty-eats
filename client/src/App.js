@@ -2,8 +2,8 @@ import { storage } from "./firebase";
 import axios from "axios";
 import React, { Component } from "react";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import "./App.css";
+// import {BrowserRouter, Link} from "react-router-dom"
+import './App.css';
 import Header from "./components/Header";
 import RecipePreview from "./components/RecipePreview";
 import CreateRecipe from "./components/CreateRecipe";
@@ -17,8 +17,6 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-  console.log("state", state);
-  // list of all recipe
 
   useEffect(() => {
     axios
@@ -26,9 +24,11 @@ function App() {
       .get(`/api`)
       .then((res) => {
         const data = res.data;
-        console.log("data", data);
-        setState(data);
-      });
+      // console.log('data', res.data);
+      setState(data);
+      
+    })
+
   }, []);
 
   const filterRecipe = () => {
@@ -39,8 +39,7 @@ function App() {
   };
 
   const filteredRecipe = filterRecipe();
-
-  // const updateRecipe =
+  // const updateRecipe = 
   // call server endpoint to get the data with search value
 
   // console.log("title", a.title)
@@ -76,7 +75,6 @@ function App() {
 
 
       </div>
-      <CreateRecipe />
     </div>
   );
 }

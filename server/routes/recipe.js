@@ -3,8 +3,9 @@ const router = require("express").Router();
 
 module.exports = db => {
   //CRUD 
+  
+  
   //CREATE
-
   router.post("/", (req, res) => {
     const { image, 
       title, 
@@ -86,7 +87,7 @@ module.exports = db => {
   //DELETE
   router.delete("/:recipe_id/delete", (req, res) => {
   
-    db.query(`DELETE FROM recipes WHERE ID = 1`)
+    db.query(`DELETE FROM recipes WHERE ID = $1`)
       
       .then((data) => {
         return res.redirect("/");
