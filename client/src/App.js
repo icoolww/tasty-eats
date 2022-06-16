@@ -68,12 +68,11 @@ function App() {
     if (pageState === 'favorites') {
       return <div>Favorites</div>;
     }
-
     return filteredRecipe.map((recipe) => (
-      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} /> 
     ));
   }
-
+  
   const onSidebarChange = (value) => {
     setSelectedRecipe(null);
     setPageState(value);
@@ -82,31 +81,11 @@ function App() {
   return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
-      
       <div className="flex flex-wrap">
-        
+      <Sidebar onSidebarChange={onSidebarChange} />
 
-        {selectedRecipe ? <RecipeCard recipe={selectedRecipe} /> : filteredRecipe.map((recipe) => (
-          // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
-          <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
-          // onClick={props.onClick}
-        ))}
-
-          {/* <nav>
-            <Link to="/about">About</Link>
-            <br />
-            <Link to="/">Home</Link>
-            <br />
-            <Link to="/recipe">Recipe</Link>
-            <br />
-            <Link to="/favorites">Favorites</Link>
-            <br />
-          </nav> */}
-        <Sidebar onSidebarChange={onSidebarChange} />
-
-        {content()}
-
-      </div>
+      <div className="flex flex-wrap flex-1">{content()}</div>
+       </div>
     </div>
   );
 }
