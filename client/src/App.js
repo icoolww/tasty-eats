@@ -13,6 +13,8 @@ import SearchRecipe from "./components/SearchRecipe";
 import RecipeCard from "./components/RecipeCard";
 
 function App() {
+
+ 
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -31,6 +33,7 @@ function App() {
 
   }, []);
 
+  
   const filterRecipe = () => {
     if (searchValue === "") return state;
     return state.filter((recipe) =>
@@ -75,8 +78,6 @@ function App() {
             <Link to="/favorites">Favorites</Link>
             <br />
           </nav> */}
-
-
       </div>
     </div>
   );
