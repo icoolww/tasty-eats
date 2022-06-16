@@ -13,7 +13,7 @@ const { Console } = require("console");
 
 const recipeRoutes = require("./routes/recipe")(db);
 const mainRoutes = require("./routes/main")(db);
-const createRoutes = require("./routes/create")(db);
+// const createRoutes = require("./routes/create")(db);
 // const favoriteRoutes = require("./routes/favorite")(db);
 
 // const days = require("./routes/days");

@@ -1,10 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import DeleteRecipe from "./DeleteRecipe";
+import axios from "axios";
 
 export default function RecipePreview(props) {
-  const { title, prep_time, portion_size, image } = props.recipe || {};
-
-  console.log("props", props.recipe);
+  const { id, title, prep_time, portion_size, image } = props.recipe || {};
+  
+  const handleDelete = (id) => {
+    axios.delete(`/api/recipes/${id}`)
+      .then(result => {
+        
+      })
+      .catch(err => console.error(err));
+  };
   // empty object
   return (
     <div className="">
@@ -19,6 +26,7 @@ export default function RecipePreview(props) {
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
         </div>
+        
       </div>
     </div>
   );

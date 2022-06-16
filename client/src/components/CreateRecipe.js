@@ -10,6 +10,7 @@ export default function CreateRecipe() {
 
   const [title, setTitle] = useState("");
   const [prep_time, setPrepTime] = useState("");
+  const [difficulty, setDifficulty] = useState("");
   const [portion_size, setPortionSize] = useState("");
   const [ingredient, setIngredients] = useState("");
   const [directions, setDirections] = useState("");
@@ -56,7 +57,7 @@ export default function CreateRecipe() {
             ingredient, 
             user_id: 1, 
             category_id: 1, 
-            difficulty: "easy"
+            difficulty
           }
           axios.post("/api/recipes", newRecipeBody)
           .then((newRecipe) => console.log("recipe created", newRecipe))
@@ -90,6 +91,12 @@ export default function CreateRecipe() {
           <label>
             {/* <p>Prep Time</p> */}
             <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="Prep time" name="prep_time" value={prep_time} onChange={(e) => { setPrepTime(e.target.value) }} />
+          </label>
+        </fieldset>
+        <fieldset>
+          <label>
+            {/* <p>Difficulty</p> */}
+            <input className="bg-oatmeal p-2 rounded-md mb-5" placeholder="Difficulty" name="difficulty" value={difficulty} onChange={(e) => { setDifficulty(e.target.value) }} />
           </label>
         </fieldset>
         <fieldset>
