@@ -4,7 +4,7 @@ import axios from "axios";
 export default function EditRecipe() {
 
   const handleEdit = (id) => {
-    axios.delete(`/api/${id}`)
+    axios.put(`/api/${id}`)
       .then(result => {
         
       })

@@ -65,7 +65,7 @@ function App() {
     if (pageState === 'favorites') {
       return <div>Favorites</div>;
     }
-    
+
     return filteredRecipe.map((recipe) => (
       <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
     ));
