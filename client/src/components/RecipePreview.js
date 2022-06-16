@@ -11,13 +11,13 @@ export default function RecipePreview(props) {
     props.onRecipeClick(props.recipe);
   };
 
-  const handleDelete = (id) => {
-    axios.delete(`/api/recipes/${id}`)
-      .then(result => {
+  // const handleDelete = (id) => {
+  //   axios.delete(`/api/recipes/${id}`)
+  //     .then(result => {
         
-      })
-      .catch(err => console.error(err));
-  };
+  //     })
+  //     .catch(err => console.error(err));
+  // };
 
   console.log("props", props.recipe);
   // empty object

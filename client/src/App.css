@@ -16,4 +16,11 @@ body {
   padding-left:300px;
 }
 
+.full_recipe {
+  width:800px;
+}
 
+.full_recipe_img {
+  clip-path: circle();
+  width:200px;
+}

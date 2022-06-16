@@ -53,13 +53,7 @@ function App() {
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
       
-      
-    <div className="flex flex-wrap">
     
-      {filteredRecipe.map((recipe) => (
-        // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
-        <RecipePreview recipe={recipe} />
-      ))}
 
       <div className="flex flex-wrap">
         <Sidebar />
@@ -83,7 +77,6 @@ function App() {
 
 
       </div>
-    </div>
     </div>
   );
 }
