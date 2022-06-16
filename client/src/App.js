@@ -47,7 +47,7 @@ return (
       
       
     <div className="flex flex-wrap">
-    <Sidebar />
+    
       {filteredRecipe.map((recipe) => (
         // <div>{recipe.title} - {recipe.prep_time} - {recipe.portion_size}</div>
         <RecipePreview recipe={recipe} />
@@ -78,7 +78,7 @@ return (
       })}
           
         </div> */}
-      
+        <CreateRecipe />
       </div>
     </div>
   );
