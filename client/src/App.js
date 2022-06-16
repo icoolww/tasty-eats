@@ -18,6 +18,7 @@ function App() {
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [pageState, setPageState] = useState('initial');
 
 
   useEffect(() => {
@@ -52,14 +53,37 @@ function App() {
   //   return <RecipeCard recipe={selectedRecipe} />
   // }
 
+  const content = () => {
+    if (selectedRecipe) return <RecipeCard recipe={selectedRecipe} />;
+    if (pageState === 'createRecipe') return <CreateRecipe />;
+    if (pageState === 'myRecipes') {
+
+      // handling your recipes button
+      return filteredRecipe.map((recipe) => (
+        <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+      ));
+    }
+
+    // handling favorite page
+    if (pageState === 'favorites') {
+      return <div>Favorites</div>;
+    }
+
+    return filteredRecipe.map((recipe) => (
+      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+    ));
+  }
+
+  const onSidebarChange = (value) => {
+    setSelectedRecipe(null);
+    setPageState(value);
+  }
+
   return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
       
-    
-
       <div className="flex flex-wrap">
-        <Sidebar />
         
 
         {selectedRecipe ? <RecipeCard recipe={selectedRecipe} /> : filteredRecipe.map((recipe) => (
@@ -78,6 +102,10 @@ function App() {
             <Link to="/favorites">Favorites</Link>
             <br />
           </nav> */}
+        <Sidebar onSidebarChange={onSidebarChange} />
+
+        {content()}
+
       </div>
     </div>
   );
