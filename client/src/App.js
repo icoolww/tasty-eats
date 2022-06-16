@@ -24,6 +24,7 @@ function App() {
         const data = res.data;
       // console.log('data', res.data);
       setState(data);
+      
     })
 
   }, []);
@@ -34,7 +35,6 @@ function App() {
   }
 
   const filteredRecipe = filterRecipe();
-
   // const updateRecipe = 
   // call server endpoint to get the data with search value
 
@@ -45,7 +45,7 @@ return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
       
-
+      
     <div className="flex flex-wrap">
     <Sidebar />
       {filteredRecipe.map((recipe) => (

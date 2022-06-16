@@ -14,8 +14,8 @@ export default function RecipePreview(props) {
   };
   // empty object
   return (
-    <div className="">
-      <div className=" bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
+    <div className="recipe_container">
+      <div className=" hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
         <div className="flex justify-center">
           <div className="flex-wrap">
             <img src={image} alt="..." className="recipe_img" />
