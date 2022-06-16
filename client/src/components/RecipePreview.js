@@ -15,7 +15,7 @@ export default function RecipePreview(props) {
 
   };
   console.log("props", props.recipe);
-
+  
   const handleDelete = (id) => {
     axios.delete(`/api/recipes/${id}`)
       .then(result => {
@@ -23,7 +23,6 @@ export default function RecipePreview(props) {
       })
       .catch(err => console.error(err));
   };
-
   // empty object
   return (
     <div className="recipe_container">
