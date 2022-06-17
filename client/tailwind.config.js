@@ -7,7 +7,8 @@ module.exports = {
     colors: {
     'oatmeal': '#F7EEE3',
     'charcoal': '#3F3E3E',
-    'sunset': '#CD5D50'
+    'sunset': '#CD5D50',
+    'parchment': '#f1e2cf'
     },
     extend: {},
   },
