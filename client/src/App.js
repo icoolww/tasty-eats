@@ -58,9 +58,9 @@ function App() {
     if (pageState === 'createRecipe') return <CreateRecipe />;
     if (pageState === 'myRecipes') {
 
-      // handling your recipes button
-      return filteredRecipe.map((recipe) => (
-        <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+      // handling my recipes button
+      return filteredRecipe.filter((recipe) => recipe.user_id === 1).map((recipe) => (
+        <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={true} />
       ));
     }
 
@@ -69,7 +69,7 @@ function App() {
       return <div>Favorites</div>;
     }
     return filteredRecipe.map((recipe) => (
-      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} /> 
+      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={recipe.user_id === 1} /> 
     ));
   }
   
