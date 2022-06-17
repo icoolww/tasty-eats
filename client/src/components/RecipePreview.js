@@ -16,48 +16,56 @@ export default function RecipePreview(props) {
   const catName = (category_id) => {
     let name = "";
     if (category_id === 1) {
-      name = "breakfast";
+      name = "Breakfast";
     } else if (category_id === 2) {
-      name = "lunch";
+      name = "Lunch"
     } else {
-      name = "dinner";
+      name = "Dinner"
     }
     return name;
   };
 
   const onClick = () => {
     props.onRecipeClick(props.recipe);
+    console.log("clicked", props.recipe)
   };
 
-  function handleFavRecipe() {
-    //api call to server to then fav or unfav a recipe
-    //will probs need recipe ID
-    //will need logic before API call if fav or not
-  }
+ 
   // empty object
   return (
-    <div
-      onClick={onClick}
-      className="m-8 p-5 hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]"
-    >
-      <FavRecipe onClick={handleFavRecipe} isFav={true} />
+    <div onClick={onClick} className="recipe_container"  >
+      {/* data-value ={id} */}
+      <div className=" hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
+      
       {/* Need to change isFav with true/false to change Heart Icon */}
-      <div className="flex justify-center">
-        <div className="flex-wrap">
-          <img src={image} alt="..." className="recipe_img" />
+        <div className="flex justify-center">
+          <div className="flex-wrap">
+            <img src={image} alt="..." 
+            className="recipe_img" 
+            />
+          </div>
         </div>
-      </div>
-      <h1 className="text-oatmeal font-medium">{title}</h1>
-      <p>{catName(category_id)}</p>
+        <h1 className="text-oatmeal font-medium">{title}</h1>
+        <p className="text-[#FCD6A8] text-sm pb-5">{catName(category_id)}</p>
 
-      <p className="text-oatmeal text-sm">{prep_time}</p>
-      <p className="text-oatmeal text-sm ">{portion_size}</p>
-      {props.isMyRecipe && (
+      <div className="recipe_details flex">
+      <img className="icon" src="../icons/stopwatch.png" />
+     <p className="text-oatmeal text-sm">{prep_time}</p>
+      </div>
+          
+          
+          <div className="flex">
+          <img className="icon" src="../icons/user.png" />
+       <p className="text-oatmeal text-sm ">{portion_size}</p>
+        {props.isMyRecipe && (
         <>
           <EditRecipe />
           <DeleteRecipe />
-        </>
-      )}
-    </div>
+        </>)}
+        </div>
+        </div>
+       </div>
+
   );
 }
+

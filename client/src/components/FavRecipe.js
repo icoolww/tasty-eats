@@ -1,10 +1,11 @@
 import React from "react";
 
+
 //button that sends an api request that saves the recipe
 
 export default function FavRecipe(props) {
   return (
-    <div>
+    <div onClick={props.onClick}>
       {props.isFav ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

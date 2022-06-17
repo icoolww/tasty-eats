@@ -17,4 +17,29 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/:id", (req, res) => {
+  db.query(`INSERT INTO users_favorites (id, user_id, recipe_id) VALUES (1,2,1)`)
+  .then((data) => {
+    res.status(200).json({message:"success"}) 
+    ;
+  })
+  //For Insert only two vales should be placed being user_id and recipe_id (Dont want to hardcode userID)
+  //need to add where statement for specific user
+  .catch((err) => {
+    res.status(500).json({ error: err });
+  });
+} )
+
+router.delete("/:id", (req, res) => {
+  db.query(`DELETE FROM users_favorites WHERE recipe_id=1;`)
+  .then((data) => {
+    res.status(200).json({message:"success"}) 
+    ;
+  })
+  //need to add where statement for specific user 
+  .catch((err) => {
+    res.status(500).json({ error: err });
+  });
+} )
+
 module.exports = router;
