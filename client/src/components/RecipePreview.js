@@ -6,9 +6,23 @@ import axios from "axios";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 export default function RecipePreview(props) {
-  const { title, prep_time, portion_size, image, id } = props.recipe || {};
+  const { title, prep_time, portion_size, image, category_id, id } = props.recipe || {};
 
-  const onClick = () => {
+
+//this function sets the string value based on the category id integer
+  const catName = (category_id) => {
+    let name = "";
+    if (category_id === 1) {
+      name = "Breakfast";
+    } else if (category_id === 2) {
+      name = "Lunch"
+    } else {
+      name = "Dinner"
+    }
+    return name
+  }
+
+ const onClick = () => {
     props.onRecipeClick(props.recipe);
     console.log("clicked", props.recipe)
   };
@@ -22,20 +36,28 @@ export default function RecipePreview(props) {
       {/* Need to change isFav with true/false to change Heart Icon */}
         <div className="flex justify-center">
           <div className="flex-wrap">
-            <img src={image} alt="..." className="recipe_img" />
+            <img src={image} alt="..." 
+            className="recipe_img" 
+            />
           </div>
         </div>
         <h1 className="text-oatmeal font-medium">{title}</h1>
-       
-        <div>
-          <p className="text-oatmeal text-sm">{prep_time}</p>
-          <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
-        </div>
-        
+        <p className="text-[#FCD6A8] text-sm pb-5">{catName(category_id)}</p>
+
+      <div className="recipe_details flex">
+      <img className="icon" src="../icons/stopwatch.png" />
+     <p className="text-oatmeal text-sm">{prep_time}</p>
       </div>
-    </div>
-    
+          
+          
+          <div className="flex">
+          <img className="icon" src="../icons/user.png" />
+       <p className="text-oatmeal text-sm ">
+        {portion_size}</p>
+        </div>
+        </div>
+        </div>
+
   );
 }
-
 

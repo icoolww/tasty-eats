@@ -1,15 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { storage } from "../firebase";
 
 export default function CreateRecipe() {
+
   const [image, setImage] = useState(null)
   const [progress, setProgress] = useState(null);
+  const [data, setData] = useState("")
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
+  const [category_id, setCategoryId] = useState("");
   const [prep_time, setPrepTime] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [portion_size, setPortionSize] = useState("");
@@ -17,6 +19,17 @@ export default function CreateRecipe() {
   const [directions, setDirections] = useState("");
 
 
+
+  useEffect(() => {
+    axios
+      .get(`/api/categories`)
+      .then((res) => {
+        const data = res.data;
+      setData(data);
+      // console.log(data)
+    })
+
+  }, []);
 
   //function for when the submit is clicked
   const handleSubmit = (e) => {
@@ -57,7 +70,7 @@ export default function CreateRecipe() {
             directions,
             ingredient,
             user_id: 1,
-            category_id: 1,
+            category_id,
             difficulty
           }
           axios.post("/api/recipes", newRecipeBody)
@@ -91,7 +104,7 @@ export default function CreateRecipe() {
         <fieldset>
           <label>
             Category:
-            <select value={category} onChange={(e) => { setCategory(e.target.value) }}>
+            <select value={category_id} onChange={(e) => { setCategoryId(e.target.value) }}>
               <option value="1">Breakfast</option>
               <option value="2">Lunch</option>
               <option value="3">Dinner</option>

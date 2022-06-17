@@ -5,15 +5,12 @@ body {
 
 .recipe_img {
   clip-path: circle();
+  width:150px;
 }
 
 .sidebar {
   padding-left:30px;
-  height:100vh;
-}
-
-.recipe_preview {
-  padding-left:300px;
+  
 }
 
 .full_recipe {
@@ -24,3 +21,13 @@ body {
   clip-path: circle();
   width:200px;
 }
+
+.icon {
+  width:20px;
+  margin-right:8px;
+}
+
+.recipe_details {
+  padding-bottom:10px;
+}
+
