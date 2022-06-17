@@ -11,6 +11,7 @@ import Breakfast from "./components/Breakfast";
 import Sidebar from "./components/Sidebar";
 import SearchRecipe from "./components/SearchRecipe";
 import RecipeCard from "./components/RecipeCard";
+import FavoritePage from "./components/FavoritePage";
 
 function App() {
   const [state, setState] = useState([]);
@@ -63,7 +64,7 @@ function App() {
 
     // handling favorite page
     if (pageState === 'favorites') {
-      return <div>Favorites</div>;
+      return <FavoritePage filteredRecipe = {filteredRecipe} onRecipeClick={setSelectedRecipe}  />
     }
 
     return filteredRecipe.map((recipe) => (
