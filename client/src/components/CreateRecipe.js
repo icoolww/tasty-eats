@@ -4,21 +4,19 @@ import axios from "axios";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { storage } from "../firebase";
 
-export default function CreateRecipe() {
-
-  const [image, setImage] = useState(null)
+export default function CreateRecipe(props) {
+  console.log(props.recipe);
+  
+  const [image, setImage] = useState(props.recipe?.image || null)
   const [progress, setProgress] = useState(null);
   const [data, setData] = useState("")
-
-  const [title, setTitle] = useState("");
-  const [category_id, setCategoryId] = useState("");
-  const [prep_time, setPrepTime] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [portion_size, setPortionSize] = useState("");
-  const [ingredient, setIngredients] = useState("");
-  const [directions, setDirections] = useState("");
-
-
+  const [title, setTitle] = useState(props.recipe?.title || "");
+  const [category_id, setCategoryId] = useState(props.recipe?.category_id || "");
+  const [prep_time, setPrepTime] = useState(props.recipe?.prep_time || "");
+  const [difficulty, setDifficulty] = useState(props.recipe?.difficulty || "");
+  const [portion_size, setPortionSize] = useState(props.recipe?.portion_size || "");
+  const [ingredient, setIngredients] = useState(props.recipe?.ingredient || "");
+  const [directions, setDirections] = useState(props.recipe?.directions || "");
 
   useEffect(() => {
     axios
@@ -31,9 +29,32 @@ export default function CreateRecipe() {
 
   }, []);
 
+
+  useEffect(() => {
+   
+    if (!props.recipe) {
+      setCategoryId("")
+      setDifficulty("")
+      setDirections("")
+      setImage(null)
+      setIngredients("")
+      setPrepTime("")
+      setTitle("")
+      setPortionSize("")
+      
+    }
+    
+
+  }, [props.recipe]);
+
+
+
   //function for when the submit is clicked
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (props.recipe) {
+    }
+      
     handleUpload(image)
     // axios.post("/api/create")
 
@@ -72,9 +93,20 @@ export default function CreateRecipe() {
             user_id: 1,
             category_id,
             difficulty
-          }
-          axios.post("/api/recipes", newRecipeBody)
+          } 
+          if (props.recipe) {
+            axios.put(`/api/recipes/${props.recipe.id}`, newRecipeBody)
+            .then(result => {
+            console.log(result)
+             
+            })
+            .catch(err => console.error(err));
+          
+          } else {
+            axios.post("/api/recipes", newRecipeBody)
             .then((newRecipe) => console.log("recipe created", newRecipe))
+          }
+          
         })
       })
   }
@@ -88,7 +120,10 @@ export default function CreateRecipe() {
         <fieldset>
           <label>
             <p>Upload a recipe image</p>
-            <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />
+            {(props.recipe) && <img src={props.recipe.image} alt="" ></img> }
+            
+            {(!props.recipe) && <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />}
+            
 
             {progress && <h3>uploaded {progress}</h3>}
           </label>

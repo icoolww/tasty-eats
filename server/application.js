@@ -54,7 +54,7 @@ module.exports = function application(ENV) {
 
 
   if (ENV === "development" || ENV === "test") {
-    console.log(ENV);
+    // console.log(ENV);
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))

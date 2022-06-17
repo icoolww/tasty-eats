@@ -1,15 +1,19 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import FavRecipe from "./FavRecipe";
+// import { useState, useEffect } from "react";
+// import FavRecipe from "./FavRecipe";
 import axios from "axios";
 
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
+import EditRecipe from "./EditRecipe";
+import DeleteRecipe from "./DeleteRecipe";
 
 export default function RecipePreview(props) {
-  const { title, prep_time, portion_size, image, category_id, id } = props.recipe || {};
+  const { id, title, prep_time, portion_size, image, category_id } =
+    props.recipe || {};
 
 
-//this function sets the string value based on the category id integer
+  //this function sets the string value based on the category id integer
   const catName = (category_id) => {
     let name = "";
     if (category_id === 1) {
@@ -19,19 +23,37 @@ export default function RecipePreview(props) {
     } else {
       name = "Dinner"
     }
-    return name
-  }
-
- const onClick = () => {
-    props.onRecipeClick(props.recipe);
-    console.log("clicked", props.recipe)
+    return name;
   };
+
+  const handleDelete = () => {
+
+    axios.delete(`/api/recipes/${id}`)
+      .then(result => {
+       props.removeRecipe(id)
+      })
+      .catch(e => console.error(e));
+
+  };
+
+  const handleEdit = () => {
+ 
+    props.onRecipeClick(props.recipe);
+    props.setPageState("editRecipe");
+
+    
+  };
+
+  // const onClick = () => {
+  //   props.onRecipeClick(props.recipe);
+  //   console.log("clicked", props.recipe)
+  // };
 
  
   // empty object
   return (
     
-      <div onClick={onClick} className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" data-value ={id}>
+      <div /*onClick={onClick} */className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/>
       
       {/* Need to change isFav with true/false to change Heart Icon */}
         <div className="flex justify-center">
@@ -50,13 +72,16 @@ export default function RecipePreview(props) {
       </div>
           
           
-          <div className="recipe_details flex">
-          <img className="icon" src="../icons/user.png" alt=""/>
-       <p className="text-oatmeal text-sm ">
-        {portion_size}</p>
+          <div className="flex">
+          <img className="icon" src="../icons/user.png" alt="" />
+       <p className="text-oatmeal text-sm ">{portion_size}</p>
+        {props.isMyRecipe && (
+        <div>
+          <EditRecipe onClick={handleEdit} />
+          <DeleteRecipe onClick={handleDelete} />
+          </div>)}
         </div>
         </div>
-       
 
   );
 }

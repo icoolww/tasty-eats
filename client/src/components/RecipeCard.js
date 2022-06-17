@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import FavRecipe from "./FavRecipe";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
+
 
 export default function RecipeCard(props) {
   const { id, title, prep_time, portion_size, image, directions, ingredient } = props.recipe || {};
@@ -31,13 +32,6 @@ export default function RecipeCard(props) {
 
   return (
 
-    // <BrowserRouter>
-    //   <nav>
-    //   <Link to="/about">About</Link>
-    //   <br />
-    // </nav>
-    // </BrowserRouter>
-
     <div className="full_recipe">
       <div className=" bg-sunset rounded-[20px]  p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
         <div className="flex justify-center">
@@ -54,6 +48,8 @@ export default function RecipeCard(props) {
         <h1 className="text-oatmeal font-medium">{directions}</h1>
         
         <FavRecipe onClick={handleFavRecipe} isFav = {true} /> 
+
+       
        
       </div>
     </div>

@@ -66,17 +66,24 @@ module.exports = db => {
 
   //UPDATE 
   router.put("/:recipeID", (req, res) => {
-    const { recipeID } = req.params;
-    const newRecipeName = req.body.name;
+    const { image, 
+      title, 
+      prep_time, 
+      portion_size, 
+      directions, 
+      ingredient, 
+      user_id, 
+      category_id, 
+      difficulty } = req.body;
   
     db.query(
-      `UPDATE recipes SET name = $1 WHERE id = $2 RETURNING *;`,
-      [newRecipeName, recipeID]
+      `UPDATE recipes SET category_id = $1, user_id = $2, title = $3, ingredient = $4, directions = $5, image = $6, prep_time = $7, portion_size = $8, difficulty = $9 WHERE id = $10
+      RETURNING *;`,
+      [category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty, req.params.recipeID]
     )
-  
-      // .then runs when the above DB insert is successfull, then user is redirected to the recipe they created
       .then((data) => {
-        return res.redirect(`/recipe/${recipeID}`);
+        return res.send({ message: "recipe updated", recipe:data.rows[0] });
+        
       })
       .catch((err) => {
         console.log("error: ", err);
@@ -85,12 +92,13 @@ module.exports = db => {
   });
 
   //DELETE
-  router.delete("/:recipe_id/delete", (req, res) => {
-  
-    db.query(`DELETE FROM recipes WHERE ID = $1`)
+  router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+    db.query(`DELETE FROM recipes WHERE ID = $1`, [id])
       
       .then((data) => {
-        return res.redirect("/");
+        return res.status(200).json()
+
       })
       .catch((err) => {
         console.log("error: ", err);
