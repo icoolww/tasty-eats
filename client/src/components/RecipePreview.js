@@ -30,8 +30,8 @@ export default function RecipePreview(props) {
  
   // empty object
   return (
-    <div onClick={onClick} className="recipe_container" data-value ={id}  >
-      <div className=" hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]">
+    
+      <div onClick={onClick} className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" data-value ={id}>
       
       {/* Need to change isFav with true/false to change Heart Icon */}
         <div className="flex justify-center">
@@ -45,18 +45,18 @@ export default function RecipePreview(props) {
         <p className="text-[#FCD6A8] text-sm pb-5">{catName(category_id)}</p>
 
       <div className="recipe_details flex">
-      <img className="icon" src="../icons/stopwatch.png" />
+      <img className="icon" src="../icons/stopwatch.png" alt=""/>
      <p className="text-oatmeal text-sm">{prep_time}</p>
       </div>
           
           
-          <div className="flex">
-          <img className="icon" src="../icons/user.png" />
+          <div className="recipe_details flex">
+          <img className="icon" src="../icons/user.png" alt=""/>
        <p className="text-oatmeal text-sm ">
         {portion_size}</p>
         </div>
         </div>
-        </div>
+       
 
   );
 }
