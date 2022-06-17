@@ -13,6 +13,8 @@ import SearchRecipe from "./components/SearchRecipe";
 import RecipeCard from "./components/RecipeCard";
 
 function App() {
+
+ 
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -32,6 +34,7 @@ function App() {
 
   }, []);
 
+  
   const filterRecipe = () => {
     if (searchValue === "") return state;
     return state.filter((recipe) =>
@@ -65,12 +68,11 @@ function App() {
     if (pageState === 'favorites') {
       return <div>Favorites</div>;
     }
-
     return filteredRecipe.map((recipe) => (
-      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} />
+      <RecipePreview recipe={recipe} onRecipeClick={setSelectedRecipe} /> 
     ));
   }
-
+  
   const onSidebarChange = (value) => {
     setSelectedRecipe(null);
     setPageState(value);
@@ -79,13 +81,11 @@ function App() {
   return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
-      
       <div className="flex flex-wrap">
-        <Sidebar onSidebarChange={onSidebarChange} />
+      <Sidebar onSidebarChange={onSidebarChange} />
 
-        {content()}
-
-      </div>
+      <div className="flex flex-wrap flex-1">{content()}</div>
+       </div>
     </div>
   );
 }
