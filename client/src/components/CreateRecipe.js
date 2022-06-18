@@ -120,7 +120,7 @@ export default function CreateRecipe(props) {
         <fieldset>
           <label>
             <p>Upload a recipe image</p>
-            {(props.recipe) && <img src={props.recipe.image} alt="" ></img> }
+            {(props.recipe) && <img  src={props.recipe.image} alt="" ></img> }
             
             {(!props.recipe) && <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />}
             
