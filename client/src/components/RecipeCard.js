@@ -52,7 +52,7 @@ export default function RecipeCard(props) {
         })}
         </ul>
         <br></br>
-        <ul>
+        <ul className="text-oatmeal font-medium">
         {directionsArray.map((directionItem) => {
           return <li>{directionItem}</li>
         })}
