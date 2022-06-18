@@ -5,8 +5,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { storage } from "../firebase";
 
 export default function CreateRecipe(props) {
-  console.log(props.recipe);
-  
   const [image, setImage] = useState(props.recipe?.image || null)
   const [progress, setProgress] = useState(null);
   const [data, setData] = useState("")
@@ -52,11 +50,9 @@ export default function CreateRecipe(props) {
   //function for when the submit is clicked
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (props.recipe) {
-    }
-      
-    handleUpload(image)
-    // axios.post("/api/create")
+    // if (props.recipe) {
+    // }
+      handleUpload(image)
 
   }
 
@@ -114,13 +110,17 @@ export default function CreateRecipe(props) {
   return (
     <>
       {/* <h1 className="text-charcoal font-medium mb-10">Create your recipe below</h1> */}
-      <form className="bg-sunset p-10 m-10 w-1/2 rounded-[20px] outline outline-offset-0 outline-2 outline-charcoal" onSubmit={handleSubmit}>
+      <form 
+      className="bg-sunset p-10 m-10 w-1/2 rounded-[20px] outline outline-offset-0 outline-2 
+      outline-charcoal" 
+      onSubmit={handleSubmit}
+      >
 
 
         <fieldset>
           <label>
             <p>Upload a recipe image</p>
-            {(props.recipe) && <img src={props.recipe.image} alt="" ></img> }
+            {(props.recipe) && <><img src={props.recipe.image} alt=""></img><input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} /></>}
             
             {(!props.recipe) && <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />}
             

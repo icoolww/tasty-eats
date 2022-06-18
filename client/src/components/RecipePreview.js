@@ -7,7 +7,7 @@ import axios from "axios";
 
 import EditRecipe from "./EditRecipe";
 import DeleteRecipe from "./DeleteRecipe";
-import ViewRecipe from "./View";
+
 
 export default function RecipePreview(props) {
   const { id, title, prep_time, portion_size, image, category_id } =
@@ -55,7 +55,7 @@ export default function RecipePreview(props) {
   // empty object
   return (
     
-      <div /*onClick={onClick}*/ className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/>
+      <div onClick={onClick} className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/>
       
       {/* Need to change isFav with true/false to change Heart Icon */}
         <div className="flex justify-center">
@@ -77,18 +77,15 @@ export default function RecipePreview(props) {
           <div className="flex">
           <img className="icon" src="../icons/user.png" alt="" />
        <p className="text-oatmeal text-sm ">{portion_size}</p>
-       <div>
-       <ViewRecipe onClick={onClick} />
-       </div>
+      
         {props.isMyRecipe && (
-        <div>
+        <div className="pt-10">
           <EditRecipe onClick={handleEdit} />
           <DeleteRecipe onClick={handleDelete} />
-          {/* <ViewRecipe onClick={onClick} /> */}
+          
           </div>)}
         </div>
-        </div>
-
+</div>
   );
 }
 

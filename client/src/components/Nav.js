@@ -1,9 +1,11 @@
 import React from "react";
 import SearchRecipe from "./SearchRecipe";
 
+
 export default function Nav(props) {
   return (
     <>
+    <div  class="static">
     <div className="bg-parchment">
     <nav className="flex justify-between">
       {/* <div className="bg-parchment"> */}
@@ -15,6 +17,7 @@ export default function Nav(props) {
       <SearchRecipe {...props} />
       {/* </div> */}
    </nav>
+   </div>
    </div>
     </>
   )
