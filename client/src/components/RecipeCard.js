@@ -7,7 +7,9 @@ import axios from "axios";
 
 export default function RecipeCard(props) {
   const { id, title, prep_time, portion_size, image, directions, ingredient } = props.recipe || {};
-
+  const ingredientArray = ingredient.split('\n')
+  const directionsArray = directions.split('\n')
+  console.log('DIRECTIONS', ingredientArray);
   // const onClick = () => {
   //   props.onRecipeClick(props.recipe);
   // };
@@ -44,8 +46,18 @@ export default function RecipeCard(props) {
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
         </div>
-        <p>{ingredient}</p>
-        <h1 className="text-oatmeal font-medium">{directions}</h1>
+        <ul>
+        {ingredientArray.map((ingredientItem) => {
+          return <li>{ingredientItem}</li>
+        })}
+        </ul>
+        <br></br>
+        <ul>
+        {directionsArray.map((directionItem) => {
+          return <li>{directionItem}</li>
+        })}
+        </ul>
+        {/* <h1 className="text-oatmeal font-medium">{directions}</h1> */}
         
         <FavRecipe onClick={handleFavRecipe} isFav = {true} /> 
 

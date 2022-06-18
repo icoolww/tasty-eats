@@ -35,4 +35,15 @@ body {
   height:450px;
 }
 
+/* .static {
+  position: "fixed";
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
 
+.sidebar {
+  top: 200px;
+  z-index: 1;
+  position: sticky;
+} */
