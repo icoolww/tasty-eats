@@ -7,7 +7,7 @@ import axios from "axios";
 
 import EditRecipe from "./EditRecipe";
 import DeleteRecipe from "./DeleteRecipe";
-import ViewRecipe from "./View";
+
 
 export default function RecipePreview(props) {
   const { id, title, prep_time, portion_size, image, category_id } =
