@@ -41,9 +41,7 @@ export default function RecipePreview(props) {
  
     props.onRecipeClick(props.recipe);
     props.setPageState("editRecipe");
-
-
-  };
+};
 
   // handling single recipe card page
   const onClick = () => {
@@ -78,13 +76,14 @@ export default function RecipePreview(props) {
           <img className="icon" src="../icons/user.png" alt="" />
        <p className="text-oatmeal text-sm ">{portion_size}</p>
       
+       
+        </div>
         {props.isMyRecipe && (
         <div className="pt-10">
           <EditRecipe onClick={handleEdit} />
           <DeleteRecipe onClick={handleDelete} />
           
           </div>)}
-        </div>
 </div>
   );
 }

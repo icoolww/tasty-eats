@@ -36,8 +36,10 @@ const removeRecipe = (id) => {
 }
 
 const editRecipe = (id) => {
-
+  setPageState("editRecipe");
 }
+
+
 
   const filterRecipe = () => {
     if (searchValue === "") return state;
@@ -65,7 +67,7 @@ const editRecipe = (id) => {
 
       // handling my recipes button
       return filteredRecipe.filter((recipe) => recipe.user_id === 1).map((recipe) => (
-        <RecipePreview setPageState={setPageState} recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={true} />
+        <RecipePreview removeRecipe={removeRecipe} editRecipe={editRecipe} setPageState={setPageState} recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={true} />
       ));
     }
 
@@ -74,7 +76,7 @@ const editRecipe = (id) => {
       return <FavoritePage filteredRecipe = {filteredRecipe} onRecipeClick={setSelectedRecipe}  />
     }
     return filteredRecipe.map((recipe) => (
-      <RecipePreview editRecipe={editRecipe} removeRecipe={removeRecipe} recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={recipe.user_id === 1} /> 
+      <RecipePreview removeRecipe={removeRecipe} editRecipe={editRecipe} recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={recipe.user_id === 1} /> 
     ));
   }
   

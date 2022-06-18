@@ -3,6 +3,10 @@ body {
   background-color: #F7EEE3;
 }
 
+textarea {
+  height: 150px;
+}
+
 .recipe_img {
   clip-path: circle();
   width:150px;
