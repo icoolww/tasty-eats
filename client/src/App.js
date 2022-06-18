@@ -61,7 +61,7 @@ const editRecipe = (id) => {
 
   const content = () => {
     if (pageState === 'editRecipe') return <CreateRecipe recipe={selectedRecipe} />;
-    if (selectedRecipe) return <RecipeCard recipe={selectedRecipe} />;
+    if (selectedRecipe) return <RecipeCard setPageState={setPageState} recipe={selectedRecipe} />;
     if (pageState === 'createRecipe') return <CreateRecipe />;
     if (pageState === 'myRecipes') {
 
