@@ -93,6 +93,7 @@ export default function CreateRecipe(props) {
           if (props.recipe) {
             axios.put(`/api/recipes/${props.recipe.id}`, newRecipeBody)
             .then(result => {
+              props.setPageState("myRecipes")
             console.log(result)
              
             })
@@ -100,7 +101,10 @@ export default function CreateRecipe(props) {
           
           } else {
             axios.post("/api/recipes", newRecipeBody)
-            .then((newRecipe) => console.log("recipe created", newRecipe))
+            .then((newRecipe) => {
+              console.log("recipe created", newRecipe)
+              props.setPageState("myRecipes")
+            })
           }
           
         })
