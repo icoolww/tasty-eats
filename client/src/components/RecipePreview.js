@@ -2,7 +2,7 @@ import React from "react";
 // import { useState, useEffect } from "react";
 // import FavRecipe from "./FavRecipe";
 import axios from "axios";
-
+import ViewRecipe from "./View";
 // import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import EditRecipe from "./EditRecipe";
@@ -36,7 +36,9 @@ export default function RecipePreview(props) {
 
   const handleEdit = () => {
     props.onRecipeClick(props.recipe);
-    props.setPageState("editRecipe");
+    props.setPageState("editRecipe")
+    // console.log("clicked")
+    // console.log('page state', props.pageState)
 };
 
   // handling single recipe card page
@@ -49,7 +51,7 @@ export default function RecipePreview(props) {
   return (
     <div class="homepage">
       <div
-        onClick={onClick}
+        /*onClick={onClick}*/
         className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/
       >
         {/* Need to change isFav with true/false to change Heart Icon */}
@@ -72,9 +74,10 @@ export default function RecipePreview(props) {
       
        
         </div>
+        <ViewRecipe onClick={onClick} />
         {props.isMyRecipe && (
         <div className="pt-10">
-          <EditRecipe onClick={handleEdit} />
+          <EditRecipe onClick={handleEdit}  />
           <DeleteRecipe onClick={handleDelete} />
           
           </div>)}
