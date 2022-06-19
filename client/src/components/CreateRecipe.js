@@ -115,9 +115,10 @@ export default function CreateRecipe(props) {
     <div className=" w-[700px] ml-20 mt-5">
       <h1 className="text-charcoal font-medium mb-10 text-2xl">Create your recipe below</h1>
       <form 
-      className="bg-sunset p-10 rounded-[20px] outline outline-offset-0 outline-2 
+      className="bg-sunset p-10 m-10 rounded-[20px] outline outline-offset-0 outline-2 
       outline-charcoal" 
       onSubmit={handleSubmit}
+      // w-1/2
       >
 
 

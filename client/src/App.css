@@ -19,6 +19,7 @@ textarea {
 
 .full_recipe {
   width:800px;
+
 }
 
 .full_recipe_img {
@@ -39,15 +40,28 @@ textarea {
   height:500px;
 }
 
-/* .static {
-  position: "fixed";
+.static {
+  position: sticky;
   z-index: 1;
   top: 0;
   width: 100%;
 }
 
-.sidebar {
-  top: 200px;
+.sidebar_button {
+  margin-top: 200px;
+  top: 0px;
   z-index: 1;
-  position: sticky;
-} */
+  position: fixed;
+}
+
+.homepage {
+  margin-left: 0px;
+  display: flex;
+
+}
+
+.content {
+  padding-left: 300px;
+}
+
+

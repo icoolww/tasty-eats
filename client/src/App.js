@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { useState, useEffect } from "react";
 // import {BrowserRouter, Link} from "react-router-dom"
-import './App.css';
+import "./App.css";
 import Header from "./components/Header";
 import RecipePreview from "./components/RecipePreview";
 import CreateRecipe from "./components/CreateRecipe";
@@ -17,17 +17,13 @@ function App() {
   const [state, setState] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [pageState, setPageState] = useState('initial');
+  const [pageState, setPageState] = useState("initial");
 
   useEffect(() => {
-    axios
-      .get(`/api`)
-      .then((res) => {
-        const data = res.data;
+    axios.get(`/api`).then((res) => {
+      const data = res.data;
       setState(data);
-      
-    })
-
+    });
   }, []);
 
 const removeRecipe = (id) => {
@@ -50,7 +46,7 @@ const removeRecipe = (id) => {
   };
 
   const filteredRecipe = filterRecipe();
-  // const updateRecipe = 
+  // const updateRecipe =
   // call server endpoint to get the data with search value
 
   // console.log("title", a.title)
@@ -73,27 +69,44 @@ const removeRecipe = (id) => {
     }
 
     // handling favorite page
-    if (pageState === 'favorites') {
-      return <FavoritePage filteredRecipe = {filteredRecipe} onRecipeClick={setSelectedRecipe}  />
+    if (pageState === "favorites") {
+      return (
+        <FavoritePage
+          filteredRecipe={filteredRecipe}
+          onRecipeClick={setSelectedRecipe}
+        />
+      );
     }
     return filteredRecipe.map((recipe) => (
-      <RecipePreview removeRecipe={removeRecipe} setPageState={setPageState}  recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={recipe.user_id === 1} /> 
+      <RecipePreview
+        setPageState={setPageState}
+        removeRecipe={removeRecipe}
+        recipe={recipe}
+        onRecipeClick={setSelectedRecipe}
+        isMyRecipe={recipe.user_id === 1}
+      />
     ));
-  }
-  
+  };
+
   const onSidebarChange = (value) => {
     setSelectedRecipe(null);
     setPageState(value);
-  }
+  };
 
   return (
     <div className="bg-oatmeal App">
       <Header onSearchValueChanged={setSearchValue} />
-      <div className="flex flex-wrap">
-      <Sidebar onSidebarChange={onSidebarChange} />
 
-      <div className="flex flex-wrap flex-1">{content()}</div>
-       </div>
+      {/* <div className="flex flex-wrap"> */}
+      <div class="homepage">
+        <div class="sidebar">
+          <Sidebar onSidebarChange={onSidebarChange} />
+        </div>
+
+        <div class="content">
+          <div className="flex flex-wrap flex-1">{content()}</div>
+        </div>
+      </div>
     </div>
   );
 }
