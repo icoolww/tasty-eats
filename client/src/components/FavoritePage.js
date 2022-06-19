@@ -13,7 +13,7 @@ export default function FavoritePage(props) {
     const [favoriteRecipes, setFavoriteRecipes] = useState([]);
     const handleDeleteFavoriteRecipe = function(){
         axios
-        .delete(`http://localhost:8001/api/favorites/1`)
+        .delete(`http://localhost:8001/api/favorites`)
         //Replace 1 with the recipe ID
         .then((res) => {
           });

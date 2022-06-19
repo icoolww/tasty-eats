@@ -18,6 +18,7 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [pageState, setPageState] = useState("initial");
+  const [MealType, setMealType] = useState("")
 
   useEffect(() => {
     axios.get(`/api`).then((res) => {
@@ -39,9 +40,21 @@ const removeRecipe = (id) => {
 
 
   const filterRecipe = () => {
-    if (searchValue === "") return state;
-    return state.filter((recipe) =>
-      recipe.title.toLowerCase().includes(searchValue.toLowerCase())
+    console.log(state)
+    // if (searchValue === "") return state;
+    return state.filter((recipe) => {
+      if (MealType !== "") {
+        if (MealType === "Breakfast" && recipe.category_id !== 1)
+        return false
+        if (MealType === "Lunch" && recipe.category_id !== 2)
+        return false
+        if (MealType === "Dinner" && recipe.category_id !== 3)
+        return false
+      }
+      return recipe.title.toLowerCase().includes(searchValue.toLowerCase())
+      
+    }
+      
     );
   };
 
@@ -95,7 +108,7 @@ const removeRecipe = (id) => {
 
   return (
     <div className="bg-oatmeal App">
-      <Header onSearchValueChanged={setSearchValue} />
+      <Header onSearchValueChanged={setSearchValue} setMealType={setMealType} />
 
       {/* <div className="flex flex-wrap"> */}
       <div class="homepage">

@@ -31,6 +31,7 @@ export default function Sidebar(props) {
             {" "}
             Favorites
           </button>
+         
         </div>
       </div>
     </>
