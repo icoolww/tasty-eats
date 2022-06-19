@@ -5,7 +5,7 @@ import FavRecipe from "./FavRecipe";
 import axios from "axios";
 
 export default function RecipeCard(props) {
-  const { id, title, prep_time, portion_size, image, directions, ingredient } =
+  const { title, prep_time, portion_size, image, directions, ingredient } =
     props.recipe || {};
   const ingredientArray = ingredient.split("\n");
   const directionsArray = directions.split("\n");
@@ -34,18 +34,36 @@ export default function RecipeCard(props) {
             <img src={image} alt="..." className="full_recipe_img" />
           </div>
         </div>
-        <h1 className="text-oatmeal font-medium">{title}</h1>
-        <div>
+        <div class="title-single">
+          <h1 className="text-[#FCD6A8] font-medium">{title}</h1>
+        </div>
+
+        {/* <div>
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
+        </div> */}
+
+        <div className="recipe_details flex">
+          <img className="icon" src="../icons/stopwatch.png" alt="" />
+          <p className="text-oatmeal text-sm">{prep_time}</p>
         </div>
+
+        <div className="flex">
+          <img className="icon" src="../icons/user.png" alt="" />
+          <p className="text-oatmeal text-sm ">{portion_size}</p>
+        </div>
+
+        <br></br>
+
+        <h1 className="text-[#FCD6A8] font-medium text-xl pb-2">Ingredients</h1>
         <ul>
           {ingredientArray.map((ingredientItem) => {
-            return <li>{ingredientItem}</li>;
+            return <li className="text-oatmeal">{ingredientItem}</li>;
           })}
         </ul>
         <br></br>
-        <ul className="text-oatmeal font-medium">
+        <h1 className="text-[#FCD6A8] font-medium text-xl pb-2">Directions</h1>
+        <ul className="text-oatmeal font-sm">
           {directionsArray.map((directionItem) => {
             return <li>{directionItem}</li>;
           })}

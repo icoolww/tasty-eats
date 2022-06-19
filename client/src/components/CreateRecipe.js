@@ -22,7 +22,6 @@ export default function CreateRecipe(props) {
       .then((res) => {
         const data = res.data;
       setData(data);
-      // console.log(data)
     })
 
   }, []);
@@ -50,9 +49,7 @@ export default function CreateRecipe(props) {
   //function for when the submit is clicked
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (props.recipe) {
-    // }
-      handleUpload(image)
+    handleUpload(image)
 
   }
 

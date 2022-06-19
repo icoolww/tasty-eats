@@ -28,8 +28,13 @@ textarea {
 }
 
 .icon {
-  width:20px;
+  width:30px;
   margin-right:8px;
+}
+
+.category-icon {
+  margin: 0 auto;
+  width:40px;
 }
 
 .recipe_details {
@@ -65,4 +70,7 @@ textarea {
   padding-left: 300px;
 }
 
-
+/* handling single page recipe card */
+.title-single {
+  font-size: 55px;
+}

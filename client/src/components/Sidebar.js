@@ -1,9 +1,4 @@
 import React from "react";
-// import { useNavigate} from "react-router-dom";
-// let navigate = useNavigate();
-// import CreatePage from "./components/buttons/CreatePage";
-// import YourRecipes from "./components/buttons/Yourrecipes";
-// import YourFavorites from "./components/buttons/YourFavorites";
 
 export default function Sidebar(props) {
   return (

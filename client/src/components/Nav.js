@@ -17,23 +17,27 @@ export default function Nav(props) {
       <div className="new-set-of-styles" >
         
       <button
+      
             onClick={() => props.setMealType("Breakfast")}
-            className="outline outline-offset-2 outline-charcoal rounded-md p-2 m-5 hover:bg-sunset hover:text-oatmeal transition ease-in-out"
+            className="w-20 bg-sand hover:bg-[#FCD6A8] transition ease-in-out text-burgundy rounded-[20px] p-2 text-sm mt-10 mr-2"
           >
+            <img className="category-icon" src="../icons/english-breakfast.png" alt=""></img>
             {" "}
             Breakfast
           </button>
           <button
             onClick={() => props.setMealType("Lunch")}
-            className="outline outline-offset-2 outline-charcoal rounded-md p-2 m-5 hover:bg-sunset hover:text-oatmeal transition ease-in-out"
+            className="w-20 bg-sand hover:bg-[#FCD6A8] transition ease-in-out text-burgundy rounded-[20px] p-2 text-sm mt-10 mr-2"
           >
+            <img className="category-icon" src="../icons/lunch-box.png" alt=""></img>
             {" "}
             Lunch
           </button>
           <button
             onClick={() => props.setMealType("Dinner")}
-            className="outline outline-offset-2 outline-charcoal rounded-md p-2 m-5 hover:bg-sunset hover:text-oatmeal transition ease-in-out"
+            className="w-20 bg-sand hover:bg-[#FCD6A8] transition ease-in-out text-burgundy rounded-[20px] p-2 text-sm mt-10"
           >
+            <img className="category-icon" src="../icons/dinner.png" alt=""></img>
             {" "}
             Dinner
           </button>

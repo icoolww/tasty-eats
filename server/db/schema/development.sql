@@ -8,8 +8,7 @@ INSERT INTO users (user_name) VALUES ('user3');
 
 INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (1, 2, 'Tiramisu', 
-    'Ingredients:
-    1 cup espresso
+    '1 cup espresso
     40 ladyfingers
     6 egg yolks
     3/4 cup sugar
@@ -17,8 +16,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     2 cups heavy whipping cream
     rum
     3 tbsp cocoa powder',
-    'Directions:
-    1. Stir together 1 cups of espresso and 2 tbsp rum, quickly dip 20 ladyfingers, arrange them in a layer of casserole dish
+    '1. Stir together 1 cups of espresso and 2 tbsp rum, quickly dip 20 ladyfingers, arrange them in a layer of casserole dish
     2. Whisk 10 minutes together 6 egg yolks and sugar on low heat (on a pot with simmering water) until slightly thickened
     3. Add 16 oz cream cheese, 2 tbsp rum
     4. Beat whipping cream in a separate bowl, then gently fold into the cream cheese mixture
@@ -32,15 +30,13 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (1, 2, 'Apple Pie', 
-    'Ingredients:
-    1/2 cup unsalted butter
+    '1/2 cup unsalted butter
     3 tbsp all purpose flour
     1/4 cup water
     1/2 cup sugar
     1/2 cup brown sugar
     8 apples',
-    'Directions:
-    1. Preheat oven to 425 degrees F (220 degrees C). Melt the butter in a saucepan. Stir in flour to form a paste
+    '1. Preheat oven to 425 degrees F (220 degrees C). Melt the butter in a saucepan. Stir in flour to form a paste
     2. Add water, white sugar and brown sugar, and bring to a boil. Reduce temperature and let simmer
     3. Place the bottom crust in your pan. Fill with apples, mounded slightly. Cover with a lattice work crust
     4. Gently pour the sugar and butter liquid over the crust. Pour slowly so that it does not run off
@@ -54,16 +50,14 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
   INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Pesto Basil Pasta', 
-    'Ingredients:
-    2 1/2 cups fresh basil leaves, washed and dried thoroughly
+    '2 1/2 cups fresh basil leaves, washed and dried thoroughly
     2 tbsp grated Parmesan cheese
     3 cloves garlic, roughly chopped
     2 tbsp pine nuts, toasted and cooled
     1 pinch black pepper
     1/4 cup extra virgin olive oil
     200 gr of pasta',
-    'Directions:
-    1. Combine the basil leaves, parmesan cheese, garlic, toasted pine nuts, kosher salt and pepper in a blender until well blended
+    '1. Combine the basil leaves, parmesan cheese, garlic, toasted pine nuts, kosher salt and pepper in a blender until well blended
     2. Drizzle in the olive oil and continue blending, scraping down the sides as needed, until the pesto is puréed
     3. Taste and season it with salt and pepper
     4. Cook pasta in a boiling water for 6 1/2 minutes
@@ -77,8 +71,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
   INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (3, 2, 'BBQ Brisket', 
-    'Ingredients:
-    3 lbs brisket (marinated overnight before will be better)
+    '3 lbs brisket (marinated overnight before will be better)
     3 tbsp onion powder
     3 tbsp chili powder
     3 tbsp garlic powder
@@ -87,8 +80,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     salt as needed
     1 tbsp Worcestershire sauce
     1 tsp apple cider vinegar',
-    'Directions:
-    1. Heat grill to 350 degrees. Trim fat cap of brisket so there is just a thin, even layer. 
+    '1. Heat grill to 350 degrees. Trim fat cap of brisket so there is just a thin, even layer. 
     2. Combine 2 tablespoons each onion powder, garlic powder, sugar, mustard powder, chili powder, and 2 teaspoons salt in a small bowl
     3. Rub evenly over the entire surface of the meat. Let sit at room temperature, uncovered, for 20 minutes
     4. Place the brisket fat-cap-side down over a direct flame and cook until spices are browned, about 10 minutes.
@@ -105,8 +97,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (3, 2, 'Mac n Cheese', 
-    'Ingredients:
-    16 oz macaroni
+    '16 oz macaroni
     1 tbsp olive oil
     6 tbsp unsalted butter
     1/3 tbsp olive oil
@@ -117,8 +108,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     1/2 cup Parmesan cheese
     1/4 tsp paprika
     4 tbsp butter',
-    'Directions:
-    1. Preheat oven to 350 degrees. Lightly grease a large 3 qt or 4 qt baking dish and set aside
+    '1. Preheat oven to 350 degrees. Lightly grease a large 3 qt or 4 qt baking dish and set aside
     2. Cook the macaroni one minute shy of al dente according to the package instructions. Remove from heat, drain, and place in a large bowl
     3. Drizzle pasta with olive oil and stir to coat pasta. Set aside to cool while preparing cheese sauce
     4. Melt butter in a deep saucepan, dutch oven, or stock pot, whisk in flour over medium heat and continue whisking for about 1 minute until bubbly and golden
@@ -136,8 +126,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (1, 2, 'Tuna Tacos', 
-    'Ingredients:
-    2 canned tuna(8oz)
+    '2 canned tuna(8oz)
     2 sour cream
     2 tbsp cream
     1 tsp lemon juice
@@ -147,8 +136,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     1 tsp olive oil
     4 pcs corn tortillas
     2 tbsp mayonaise',
-    'Directions:
-    1. Whisk together the mayonnaise, sour cream, cream, and lemon juice
+    '1. Whisk together the mayonnaise, sour cream, cream, and lemon juice
     2. In a separate bowl, stir together the onions and cilantro. Set this garnish and the cream sauce aside for the moment
     3. Heat oil in a small pan and sauté the tuna, stirring often, until the tuna is heated through and very slightly browned
     4. If using soft tortillas, heat a griddle over high heat and place them on it. Heat the tortillas, turning once or twice in the process, until they are very hot 
@@ -162,8 +150,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
       INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Strawberry Spinach Salad', 
-    'Ingredients:
-    1/2 cup white sugar
+    '1/2 cup white sugar
     1/2 cup olive oil
     1/4 cup distilled white vinegar
     2 tbsp sesame seeds
@@ -175,8 +162,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     1 quart strawberries
     10 ounces spinach
     1/4 cup almonds',
-    'Directions:
-    1. Whisk together sugar, oil, vinegar, sesame seeds, poppy seeds, onion, paprika, and Worcestershire in a medium bowl. Cover and chill for 1 hour
+    '1. Whisk together sugar, oil, vinegar, sesame seeds, poppy seeds, onion, paprika, and Worcestershire in a medium bowl. Cover and chill for 1 hour
     2. Combine strawberries, spinach, and almonds in a large bowl
     3. Pour dressing over salad; toss to coat. Refrigerate for 10 to 15 minutes before serving',
     'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/strawberry_salad.jpg?alt=media&token=875b56ad-b615-4b91-b409-486022b0d0ce',
@@ -188,8 +174,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Egg Fried Rice', 
-    'Ingredients:
-    4 eggs
+    '4 eggs
     3 tbsp vegetable oil
     1 cup diced onion
     2 cups diced mixed vegetables
@@ -198,8 +183,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     4 cups cooked jasmine rice (overnight)
     2 1/2 tbsp soy sauce
     2 tsp toasted sesame oil',
-    'Directions:
-    1. Crack the eggs into a small bowl and beat them together
+    '1. Crack the eggs into a small bowl and beat them together
     2. Heat a skillet with 1 tablespoon of the oil over medium-high heat. Once the pan is hot, add the beaten eggs and scramble them for about a minute
     3. Heat oil in a small pan and sauté the tuna, stirring often, until the tuna is heated through and very slightly browned
     4. Drizzle the remaining 2 tablespoons of oil into a wok over high heat. Add the onions and cook them for about 1 to 2 minutes, stirring constantly
@@ -217,8 +201,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (3, 2, 'Bagel and Lox', 
-    'Ingredients:
-    Everything Bagel – toasted to your liking. I like it lightly toasted, so there is a little crunch with a whole lotta chew
+    'Everything Bagel – toasted to your liking. I like it lightly toasted, so there is a little crunch with a whole lotta chew
     Cream Cheese – I use whipped for easy spreading
     Lox – or smoked salmon, if preferred I go into more detail below about the differences between lox and smoked salmon
     Cucumber – adds an amazing light, fresh flavor to balance out the richness of the cream cheese and lox
@@ -226,8 +209,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Capers – adds a “pop” of texture and ultra brine-y flavor
     Salt and Pepper – enhances other flavors
     Lemon Juice and Fresh Dill – to garnish Add delicious tang, sweetness, and earthy flavor',
-    'Directions:
-    Spread each toasted bagel half with 2 tablespoons whipped cream cheese.
+    'Spread each toasted bagel half with 2 tablespoons whipped cream cheese.
     Top each half with 2 oz smoked salmon or lox, 3 cucumber slices, 1 slice red onion, and 1-2 teaspoons capers.
     Season with salt, pepper, lemon juice, and fresh dill, to taste.
     Enjoy!
@@ -241,8 +223,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (1, 2, 'Butter Tarts', 
-    'Ingredients:
-      3 cups (375g) all-purpose flour, plus more for dusting
+    '3 cups (375g) all-purpose flour, plus more for dusting
       1/2 tsp (2.5ml) baking powder
       1/2 tsp (2.5ml) salt
       1/2 cup (114g) lard
@@ -250,8 +231,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
       1 large egg
       1 tsp (5ml) white vinegar
       1 cup (250ml) cold water',
-    'Directions:
-    Roll the dough to about 1/8″ thick. Cut as many 4″ circles as you can. Re-roll the scraps and cut out more circles to make 12.
+    'Roll the dough to about 1/8″ thick. Cut as many 4″ circles as you can. Re-roll the scraps and cut out more circles to make 12.
     Fit the pastry circles into a muffin pan and place back in the fridge until ready to fill.
     In a small saucepan over medium heat, melt the butter and brown sugar until combined. Whisk in a splash of cream and vanilla extract. Let cool for 5 minutes and whisk in an egg.
     Divide any add-ins like pecans or raisins if using among the pastry.
@@ -268,16 +248,14 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Sphagetti Carbonara', 
-    'Ingredients:
-      8 ounces spaghetti
+    '8 ounces spaghetti
       2 large eggs
       1/2 cup freshly grated Parmesan
       4 slices bacon, diced
       4 cloves garlic, minced
       Kosher salt and freshly ground black pepper, to taste
       2 tablespoons chopped fresh parsley leaves',
-    'Directions:
-    In a large pot of boiling salted water, cook pasta according to package instructions; reserve 1/2 cup water and drain well.
+    'In a large pot of boiling salted water, cook pasta according to package instructions; reserve 1/2 cup water and drain well.
     In a small bowl, whisk together eggs and Parmesan; set aside.
     Heat a large skillet over medium high heat. Add bacon and cook until brown and crispy, about 6-8 minutes; reserve excess fat.
     Stir in garlic until fragrant, about 1 minute. Reduce heat to low.
@@ -293,16 +271,14 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (1, 2, 'Lobster Roll', 
-    'Ingredients:
-    1 1/2 pounds cooked lobster meat approximately 3 1/2 cups, cut into 3/4 inch pieces
+    '1 1/2 pounds cooked lobster meat approximately 3 1/2 cups, cut into 3/4 inch pieces
     1/4 cup mayonnaise
     1 1/2 tablespoons lemon juice
     1/4 cup celery finely chopped, use the tender inner stalks
     1 tablespoon chives thinly sliced, plus more for garnish if desire salt and pepper to taste
     4 split top hot dog buns
     2 tablespoons butter softened',
-    'Directions:
-    Place the lobster meat, mayonnaise, lemon juice, celery, chives, salt and pepper in a bowl.
+    'Place the lobster meat, mayonnaise, lemon juice, celery, chives, salt and pepper in a bowl.
     Stir gently to combine.
     Spread the butter onto the outer sides of each bun. Place the buns in a pan or on a griddle over medium heat. Cook for 2-3 minutes per side or until golden brown.
     Divide the lobster mixture among the buns. Serve immediately, garnished with additional chives if desired.',
@@ -314,13 +290,11 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
       INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (3, 2, 'Poutine', 
-    'Ingredients:
-    1 quart vegetable oil for frying
+    '1 quart vegetable oil for frying
     1 (10.25 ounce) can beef gravy
     5 medium potatoes, cut into fries
     2 cups cheese curds',
-    'Directions:
-    Heat oil in a deep fryer or deep heavy skillet to 365 degrees F (185 degrees C).
+    'Heat oil in a deep fryer or deep heavy skillet to 365 degrees F (185 degrees C).
     While the oil is heating, you can begin to warm your gravy.
     Place the fries into the hot oil, and cook until light brown, about 5 minutes. Make the fries in batches if necessary to allow them room to move a little in the oil.
     Remove to a paper towel lined plate to drain
@@ -334,15 +308,13 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
       INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Beavertails', 
-    'Ingredients:
-    yeast, sugar and warm Water
+    'yeast, sugar and warm Water
     warm milk
     melted butter
     vanilla
     salt
     egg',
-    'Directions:
-    In a large bowl, mix the yeast, warm water, and ¼ teaspoon of sugar. Allow the water mixture to stand for a couple of minutes to allow the yeast to swell and dissolve.
+    'In a large bowl, mix the yeast, warm water, and ¼ teaspoon of sugar. Allow the water mixture to stand for a couple of minutes to allow the yeast to swell and dissolve.
     Depending on various factors (temperature, humidity, etc.) this could take as long as 10 minutes.
     Add the ⅓ Cup of sugar, milk, vanilla, eggs, oil, salt, and most of the flour to the yeast mixture. Knead for 5 to 8 minutes using a dough hook, adding flour as needed to form a firm smooth, elastic dough.
     Place dough in a lightly greased bowl. Place a warm towel on top of the bowl and "seal". If you are not going to use the dough right away, you can refrigerate the dough at this point.
@@ -356,8 +328,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
       INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
   VALUES (2, 2, 'Lasagna', 
-    'Ingredients:
-    2 tablespoons white sugar
+    '2 tablespoons white sugar
     1 1/2 teaspoons dried basil leaves
     1/2 teaspoon fennel seeds
     1 teaspoon Italian seasoning
@@ -369,8 +340,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     1 egg
     3/4 pound mozzarella cheese, sliced
     3/4 cup grated Parmesan cheese',
-    'Directions:
-    In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned.
+    'In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned.
     Stir in crushed tomatoes, tomato paste, tomato sauce, and water.
     Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley.
     Simmer, covered, for about 1 1/2 hours, stirring occasionally.
