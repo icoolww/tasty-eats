@@ -34,11 +34,27 @@ export default function RecipeCard(props) {
             <img src={image} alt="..." className="full_recipe_img" />
           </div>
         </div>
-        <h1 className="text-oatmeal font-medium">{title}</h1>
-        <div>
+        <div class="title-single">
+          <h1 className="text-oatmeal font-medium">{title}</h1>
+        </div>
+
+        {/* <div>
           <p className="text-oatmeal text-sm">{prep_time}</p>
           <p className="text-oatmeal text-sm pb-10">{portion_size}</p>
+        </div> */}
+
+        <div className="recipe_details flex">
+          <img className="icon" src="../icons/stopwatch.png" alt="" />
+          <p className="text-oatmeal text-sm">{prep_time}</p>
         </div>
+
+        <div className="flex">
+          <img className="icon" src="../icons/user.png" alt="" />
+          <p className="text-oatmeal text-sm ">{portion_size}</p>
+        </div>
+
+        <br></br>
+
         <ul>
           {ingredientArray.map((ingredientItem) => {
             return <li>{ingredientItem}</li>;

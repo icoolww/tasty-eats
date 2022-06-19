@@ -37,7 +37,7 @@ textarea {
 }
 
 .recipe_container {
-  height:375px;
+  height:420px;
   padding-top: unset;
 }
 
@@ -65,4 +65,7 @@ textarea {
   padding-left: 300px;
 }
 
-
+/* handling single page recipe card */
+.title-single {
+  font-size: 55px;
+}
