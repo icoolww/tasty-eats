@@ -37,7 +37,8 @@ textarea {
 }
 
 .recipe_container {
-  height:450px;
+  height:375px;
+  padding-top: unset;
 }
 
 .static {
