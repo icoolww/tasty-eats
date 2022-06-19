@@ -24,8 +24,9 @@ module.exports = db => {
     )
   
       // .then runs when the above DB insert is successfull, then user is redirected to the recipe they created
-      .then((data) => {
-        res.send({ message: "recipe created", recipe:data.rows[0] });
+      .then((res) => {
+        res.send({ message: "recipe created", recipe:data.rows[0]}) 
+      //res.redirect("/")
       })
       .catch((err) => {
         console.log("error: ", err);
@@ -83,7 +84,7 @@ module.exports = db => {
     )
       .then((data) => {
         return res.send({ message: "recipe updated", recipe:data.rows[0] });
-        
+        //res.redirect("/")
       })
       .catch((err) => {
         console.log("error: ", err);

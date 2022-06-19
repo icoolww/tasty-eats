@@ -52,7 +52,7 @@ export default function RecipePreview(props) {
     <div class="homepage">
       <div
         /*onClick={onClick}*/
-        className="cursor-pointer recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/
+        className=" recipe_container hover:scale-105 hover:bg-[#D15E51] transition ease-in-out bg-sunset rounded-[20px] w-60 p-10 m-5 outline outline-offset-2outline-charcoal shadow-[8px_8px_#AE574D]" /*data-value ={id}*/
       >
         {/* Need to change isFav with true/false to change Heart Icon */}
         <div className="flex justify-center">
@@ -76,7 +76,7 @@ export default function RecipePreview(props) {
         </div>
         <ViewRecipe onClick={onClick} />
         {props.isMyRecipe && (
-        <div className="pt-10">
+        <div className="pt-2">
           <EditRecipe onClick={handleEdit}  />
           <DeleteRecipe onClick={handleDelete} />
           
