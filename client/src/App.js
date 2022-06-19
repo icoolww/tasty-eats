@@ -26,12 +26,16 @@ function App() {
     });
   }, []);
 
-  const removeRecipe = (id) => {
-    const newState = [...state];
-    setState(newState.filter((recipe) => recipe.id !== id));
-  };
+const removeRecipe = (id) => {
+  const newState = [...state]
+  setState(newState.filter(recipe => recipe.id !== id));
+}
 
-  const editRecipe = (id) => {};
+const editRecipe = (id) => {
+  setPageState("editRecipe");
+}
+
+
 
   const filterRecipe = () => {
     if (searchValue === "") return state;
@@ -52,22 +56,15 @@ function App() {
   // }
 
   const content = () => {
-    if (pageState === "editRecipe")
-      return <CreateRecipe recipe={selectedRecipe} />;
-    if (selectedRecipe) return <RecipeCard recipe={selectedRecipe} />;
-    if (pageState === "createRecipe") return <CreateRecipe />;
-    if (pageState === "myRecipes") {
+    if (pageState === 'editRecipe') return <CreateRecipe recipe={selectedRecipe} />;
+    if (selectedRecipe) return <RecipeCard setPageState={setPageState} recipe={selectedRecipe} />;
+    if (pageState === 'createRecipe') return <CreateRecipe />;
+    if (pageState === 'myRecipes') {
+
       // handling my recipes button
-      return filteredRecipe
-        .filter((recipe) => recipe.user_id === 1)
-        .map((recipe) => (
-          <RecipePreview
-            setPageState={setPageState}
-            recipe={recipe}
-            onRecipeClick={setSelectedRecipe}
-            isMyRecipe={true}
-          />
-        ));
+      return filteredRecipe.filter((recipe) => recipe.user_id === 1).map((recipe) => (
+        <RecipePreview removeRecipe={removeRecipe} editRecipe={editRecipe} setPageState={setPageState} recipe={recipe} onRecipeClick={setSelectedRecipe} isMyRecipe={true} />
+      ));
     }
 
     // handling favorite page

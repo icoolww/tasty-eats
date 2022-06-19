@@ -108,8 +108,8 @@ export default function CreateRecipe(props) {
   }
 
   return (
-    <>
-      {/* <h1 className="text-charcoal font-medium mb-10">Create your recipe below</h1> */}
+    <div className=" w-[700px] ml-20 mt-5">
+      <h1 className="text-charcoal font-medium mb-10 text-2xl">Create your recipe below</h1>
       <form 
       className="bg-sunset p-10 m-10 rounded-[20px] outline outline-offset-0 outline-2 
       outline-charcoal" 
@@ -126,7 +126,7 @@ export default function CreateRecipe(props) {
             {(!props.recipe) && <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />}
             
 
-            {progress && <h3>uploaded {progress}</h3>}
+            {progress && <p className="text-md text-oatmeal pb-2">uploaded {progress}</p>}
           </label>
         </fieldset>
 
@@ -140,7 +140,8 @@ export default function CreateRecipe(props) {
         <fieldset>
           <label>
             Category:
-            <select value={category_id} onChange={(e) => { setCategoryId(e.target.value) }}>
+            <select className="ml-2 mb-5 rounded-md bg-oatmeal" value={category_id} onChange={(e) => { setCategoryId(e.target.value) }}>
+            <option value="">Select an option</option>
               <option value="1">Breakfast</option>
               <option value="2">Lunch</option>
               <option value="3">Dinner</option>
@@ -181,6 +182,6 @@ export default function CreateRecipe(props) {
         <button className="bg-oatmeal p-3 w-40 rounded-md" type="submit" >Save</button>
 
       </form>
-    </>
+    </div>
   )
 }

@@ -17,9 +17,11 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/:id", (req, res) => {
-  db.query(`INSERT INTO users_favorites (id, user_id, recipe_id) VALUES (1,2,1)`)
+router.post("/", (req, res) => {
+  console.log("creatingFav")
+  db.query(`INSERT INTO users_favorites (user_id, recipe_id) VALUES (2,1) RETURNING *`)
   .then((data) => {
+    console.log(data.rows)
     res.status(200).json({message:"success"}) 
     ;
   })

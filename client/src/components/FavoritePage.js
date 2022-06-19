@@ -30,11 +30,16 @@ useEffect(() => {
     }, []);
 
     const filteredFavoriteRecipes = function (){
-        return props.filteredRecipe.filter((recipe) => {
-           return favoriteRecipes[0].recipe_id === recipe.id
-    })} 
+        console.log(favoriteRecipes)
+        const favoritedRecipes=favoriteRecipes.filter((recipe) => {
+           return recipe.user_id === 2
+           //2 is a hardcoded value to a dummy user
+        })
+        const uniqueFavorites = [...new Set(favoritedRecipes)] 
+        return uniqueFavorites
+    } 
 
-    //still wont work if its a favrecipe list because line 26 only accesses the first recipe in the list
+    //still wont work if its a favrecipe list because line 26 only accesses the first recipe in the list 
     //need another for loop for favrecipes to check the recipe ID
 
 
