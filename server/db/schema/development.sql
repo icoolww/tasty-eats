@@ -232,7 +232,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Season with salt, pepper, lemon juice, and fresh dill, to taste.
     Enjoy!
     Take 5 seconds to rate this recipe below. We greatly appreciate it!',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/bagel%20and%20lox.jpeg?alt=media&token=89ab9048-774e-4a16-9963-26137b9e32ca',
     '40 minutes',
     '4 servings',
     'medium'
@@ -257,7 +257,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Divide any add-ins like pecans or raisins if using among the pastry.
     Pour in the butter tart filling just until half full.
     Bake at 375F for 13-15 minutes or until crust is lightly golden and filling is bubbling',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/butter%20tarts.jpg?alt=media&token=ee6db79e-4790-493e-84c2-a318f302c28e',
     '65 minutes',
     '5 servings',
     'medium'
@@ -283,7 +283,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Stir in garlic until fragrant, about 1 minute. Reduce heat to low.
     Working quickly, stir in pasta and egg mixture, and gently toss to combine; season with salt and pepper, to taste. Add reserved pasta water, one tablespoon at a time, until desired consistency is reached.
     Serve immediately, garnished with parsley, if desired',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/sphagetti%20carbonara.jpeg?alt=media&token=424de60b-18d0-4e20-b590-363539ca6053',
     '20 minutes',
     '1 serving',
     'medium'
@@ -306,7 +306,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Stir gently to combine.
     Spread the butter onto the outer sides of each bun. Place the buns in a pan or on a griddle over medium heat. Cook for 2-3 minutes per side or until golden brown.
     Divide the lobster mixture among the buns. Serve immediately, garnished with additional chives if desired.',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/lobster%20roll.jpg?alt=media&token=93f2bc86-dd53-4f7c-9a1d-d0d03c7a52bb',
     '30 minutes',
     '2 servings',
     'easy'
@@ -326,7 +326,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Remove to a paper towel lined plate to drain
     Place the fries on a serving platter, and sprinkle the cheese over them.
     Ladle gravy over the fries and cheese, and serve immediately.',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/poutine.jpeg?alt=media&token=43a37fc2-add5-4272-a80c-e8049ca5d2d6',
     '45 minutes',
     '2 servings',
     'easy'
@@ -347,7 +347,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     Add the ⅓ Cup of sugar, milk, vanilla, eggs, oil, salt, and most of the flour to the yeast mixture. Knead for 5 to 8 minutes using a dough hook, adding flour as needed to form a firm smooth, elastic dough.
     Place dough in a lightly greased bowl. Place a warm towel on top of the bowl and "seal". If you are not going to use the dough right away, you can refrigerate the dough at this point.
     Let rise for about 30 to 40 minutes.',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/beavertails.jpeg?alt=media&token=94e9b5c9-9bc3-4924-884c-24e0cd87e53b',
     '75 minutes',
     '6 servings',
     'medium'
@@ -377,7 +377,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13-inch baking dish. Arrange 6 noodles lengthwise over meat sauce.
     Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices.
     Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese',
-    'URL',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/lasagna.jpeg?alt=media&token=7e2fdeb1-e659-4b2c-b49d-e51ea51da365',
     '45 minutes',
     '4 servings',
     'medium'
