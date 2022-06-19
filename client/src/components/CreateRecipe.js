@@ -130,7 +130,7 @@ export default function CreateRecipe(props) {
             {(!props.recipe) && <input type="file" className="bg-oatmeal p-2 rounded-md mb-5" name="image" onChange={handleImageChange} />}
             
 
-            {progress && <p className="text-md text-oatmeal pb-2">uploaded {progress}</p>}
+            
           </label>
         </fieldset>
 
@@ -184,7 +184,7 @@ export default function CreateRecipe(props) {
           </label>
         </fieldset>
         <button className="bg-oatmeal p-3 w-40 rounded-md" type="submit" >Save</button>
-
+        {progress && <h1 className="text-md text-oatmeal pb-2">Recipe Created! {progress}%</h1>}
       </form>
     </div>
   )
