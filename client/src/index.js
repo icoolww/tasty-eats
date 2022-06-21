@@ -8,17 +8,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-    {/* <BrowserRouter>
+    /* <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="about" element={<div>About page</div>} />
         <Route path="recipe" element={<div>Recipe page</div>} />
         <Route path="favorites" element={<div>Favorites page</div>} />
       </Routes>
-    </BrowserRouter> */}
-  </React.StrictMode>
+    </BrowserRouter> */
+  // </React.StrictMode>
   
 );
 
