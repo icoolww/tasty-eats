@@ -6,8 +6,56 @@ INSERT INTO users (user_name) VALUES ('user1');
 INSERT INTO users (user_name) VALUES ('user2');
 INSERT INTO users (user_name) VALUES ('user3');
 
+
 INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (1, 2, 'Tiramisu', 
+  VALUES (3, 2, 'Mac n Cheese', 
+    '16 oz macaroni
+    1 tbsp olive oil
+    6 tbsp unsalted butter
+    1/3 tbsp olive oil
+    3 cups milk
+    1 cup heavy whipping cream
+    4 cups cheddar cheese
+    1 1/2  cups Panko crumbs
+    1/2 cup Parmesan cheese
+    1/4 tsp paprika
+    4 tbsp butter',
+    '1. Preheat oven to 350 degrees. Lightly grease a large 3 qt or 4 qt baking dish and set aside
+    2. Cook the macaroni one minute shy of al dente according to the package instructions. Remove from heat, drain, and place in a large bowl
+    3. Drizzle pasta with olive oil and stir to coat pasta. Set aside to cool while preparing cheese sauce
+    4. Melt butter in a deep saucepan, dutch oven, or stock pot, whisk in flour over medium heat and continue whisking for about 1 minute until bubbly and golden
+    5. Gradually whisk in the milk and heavy cream until nice and smooth, keep whisking until you see bubbles on the surface and then continue cooking and whisking for another 2 minutes
+    6. Add two cups of shredded cheese and whisk until smooth
+    7. Stir in the cooled macaroni until combined and pasta is fully coated with the cheese sauce
+    8. In a small bowl, combine panko crumbs, Parmesan cheese, melted butter and paprika
+    9. Sprinkle over the top and bake until bubbly and golden brown, about 30 minutes',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/mac_and_cheese.jpeg?alt=media&token=6d8b9e14-9133-4b29-b655-fd36f2a96182',
+    '60 minutes',
+    '12 servings',
+    'medium'
+    );
+
+      INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
+  VALUES (1, 2, 'Pancakes', 
+    '1 1/2 cups all-purpose flour
+     3 1/2 teaspoons baking powder
+     1/4 teaspoon salt, or more to taste
+     1 tablespoon white sugar
+     1 1/4 cups milk
+     1 egg
+     3 tablespoons butter, melted',
+    'In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.
+    Heat a lightly oiled griddle or frying pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/pancakes.jpeg?alt=media&token=994a6945-0376-4c21-87a5-076f95e3e4ac',
+    '20 minutes',
+    '8 servings',
+    'easy'
+    );
+
+ 
+
+INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
+  VALUES (3, 2, 'Tiramisu', 
     '1 cup espresso
     40 ladyfingers
     6 egg yolks
@@ -49,7 +97,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     );
 
   INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (2, 2, 'Pesto Basil Pasta', 
+  VALUES (3, 2, 'Pesto Basil Pasta', 
     '2 1/2 cups fresh basil leaves, washed and dried thoroughly
     2 tbsp grated Parmesan cheese
     3 cloves garlic, roughly chopped
@@ -95,37 +143,11 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     'advance'
   );
 
-INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (3, 2, 'Mac n Cheese', 
-    '16 oz macaroni
-    1 tbsp olive oil
-    6 tbsp unsalted butter
-    1/3 tbsp olive oil
-    3 cups milk
-    1 cup heavy whipping cream
-    4 cups cheddar cheese
-    1 1/2  cups Panko crumbs
-    1/2 cup Parmesan cheese
-    1/4 tsp paprika
-    4 tbsp butter',
-    '1. Preheat oven to 350 degrees. Lightly grease a large 3 qt or 4 qt baking dish and set aside
-    2. Cook the macaroni one minute shy of al dente according to the package instructions. Remove from heat, drain, and place in a large bowl
-    3. Drizzle pasta with olive oil and stir to coat pasta. Set aside to cool while preparing cheese sauce
-    4. Melt butter in a deep saucepan, dutch oven, or stock pot, whisk in flour over medium heat and continue whisking for about 1 minute until bubbly and golden
-    5. Gradually whisk in the milk and heavy cream until nice and smooth, keep whisking until you see bubbles on the surface and then continue cooking and whisking for another 2 minutes
-    6. Add two cups of shredded cheese and whisk until smooth
-    7. Stir in the cooled macaroni until combined and pasta is fully coated with the cheese sauce
-    8. In a small bowl, combine panko crumbs, Parmesan cheese, melted butter and paprika
-    9. Sprinkle over the top and bake until bubbly and golden brown, about 30 minutes',
-    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/mac_and_cheese.jpeg?alt=media&token=6d8b9e14-9133-4b29-b655-fd36f2a96182',
-    '60 minutes',
-    '12 servings',
-    'medium'
-    );
+
 
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (1, 2, 'Tuna Tacos', 
+  VALUES (2, 2, 'Tuna Tacos', 
     '2 canned tuna(8oz)
     2 sour cream
     2 tbsp cream
@@ -200,7 +222,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (3, 2, 'Bagel and Lox', 
+  VALUES (2, 2, 'Bagel and Lox', 
     'Everything Bagel – toasted to your liking. I like it lightly toasted, so there is a little crunch with a whole lotta chew
     Cream Cheese – I use whipped for easy spreading
     Lox – or smoked salmon, if preferred I go into more detail below about the differences between lox and smoked salmon
@@ -219,6 +241,8 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     '4 servings',
     'medium'
     );
+
+    
 
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
@@ -247,7 +271,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (2, 2, 'Sphagetti Carbonara', 
+  VALUES (2, 2, 'Spaghetti Carbonara', 
     '8 ounces spaghetti
       2 large eggs
       1/2 cup freshly grated Parmesan
@@ -270,7 +294,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 
     INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (1, 2, 'Lobster Roll', 
+  VALUES (2, 2, 'Lobster Roll', 
     '1 1/2 pounds cooked lobster meat approximately 3 1/2 cups, cut into 3/4 inch pieces
     1/4 cup mayonnaise
     1 1/2 tablespoons lemon juice
@@ -285,6 +309,26 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/lobster%20roll.jpg?alt=media&token=93f2bc86-dd53-4f7c-9a1d-d0d03c7a52bb',
     '30 minutes',
     '2 servings',
+    'easy'
+    );
+
+    INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
+  VALUES (1, 2, 'French Toast', 
+    '2/3 cup milk
+    2 large eggs
+    1 teaspoon vanilla extract (Optional)
+    1/4 teaspoon ground cinnamon (Optional)
+    salt to taste
+    6 thick slices bread
+    1 tablespoon unsalted butter, or more as needed',
+    'Whisk milk, eggs, vanilla, cinnamon, and salt together in a shallow bowl.
+    Lightly butter a griddle and heat over medium-high heat.
+     Dunk bread in the egg mixture, soaking both sides. 
+     Transfer to the hot skillet and cook until golden, 3 to 4 minutes per side. 
+     Serve hot.',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/French-Toast.jpeg?alt=media&token=0bfd6c36-0083-4206-b32d-7f7d6ddb7861',
+    '25 minutes',
+    '6 slices',
     'easy'
     );
 
@@ -327,7 +371,7 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
 
 
       INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
-  VALUES (2, 2, 'Lasagna', 
+  VALUES (3, 2, 'Lasagna', 
     '2 tablespoons white sugar
     1 1/2 teaspoons dried basil leaves
     1/2 teaspoon fennel seeds
@@ -352,3 +396,33 @@ INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image,
     '4 servings',
     'medium'
     );
+
+    INSERT INTO recipes (category_id, user_id, title, ingredient, directions, image, prep_time, portion_size, difficulty)
+  VALUES (1, 2, 'Breakfast Egg Muffins', 
+    '4 slices bacon diced
+    1 cup onion finely chopped
+    1 tsp minced garlic
+    1 cup finely diced vegetables Spinach, bell pepper, broccoli, zucchini, tomatoes, etc.
+    12 eggs beaten
+    1 tsp Dijon mustard
+    1/2 tsp sea salt
+    1/4 tsp pepper
+    1/4 tsp paprika
+    1 cup shredded cheddar cheese',
+    'In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned.
+    Stir in crushed tomatoes, tomato paste, tomato sauce, and water.
+    Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley.
+    Simmer, covered, for about 1 1/2 hours, stirring occasionally.
+    To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13-inch baking dish. Arrange 6 noodles lengthwise over meat sauce.
+    Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices.
+    Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese',
+    'https://firebasestorage.googleapis.com/v0/b/tasty-eats-bc9d5.appspot.com/o/egg-muffins-recipe-egg-cups-6.jpeg?alt=media&token=1656ae63-b319-4c89-a84f-64835da879d9',
+    '45 minutes',
+    '14 muffins',
+    'medium'
+    );
+
+   
+
+   
+
