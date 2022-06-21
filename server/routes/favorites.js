@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require("../db");
-
-
 //READ ALL FAVORITES
-
 router.get("/", (req, res) => {
   db.query(`SELECT * FROM users_favorites;`)
     .then(async (data) => {
@@ -28,7 +25,6 @@ router.post("/", (req, res) => {
   console.log(user_id, recipe_id);
   db.query(`INSERT INTO users_favorites (user_id, recipe_id) VALUES (${user_id},${recipe_id});`)
   .then((data) => {
-    console.log(data.rows)
     res.status(200).json({message:"success"}) 
     ;
   })

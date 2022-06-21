@@ -5,11 +5,11 @@ import FavRecipe from "./FavRecipe";
 import axios from "axios";
 
 export default function RecipeCard(props) {
-  const { title, prep_time, portion_size, image, directions, ingredient } =
+  const { title, prep_time, portion_size, image, directions, ingredient, id: recipe_id, user_id } =
     props.recipe || {};
   const ingredientArray = ingredient.split("\n");
   const directionsArray = directions.split("\n");
-  console.log("DIRECTIONS", ingredientArray);
+  // console.log("DIRECTIONS", ingredientArray);
   // const onClick = () => {
   //   props.onRecipeClick(props.recipe);
   // };

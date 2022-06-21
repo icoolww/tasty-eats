@@ -96,7 +96,7 @@ const removeRecipe = (id) => {
         removeRecipe={removeRecipe}
         recipe={recipe}
         onRecipeClick={setSelectedRecipe}
-        isMyRecipe={recipe.user_id === 1}
+        // isMyRecipe={recipe.user_id === 1}
       />
     ));
   };
