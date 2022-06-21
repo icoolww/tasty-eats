@@ -39,10 +39,11 @@ export default function FavoritePage(props) {
 
   return (
     <>
-      <div>Favorite Page</div>
-      <div>
-        <FavRecipe isFav={true} />
-      </div>
+      {/* <h1 className="text-charcoal font-md text-2xl">My Favorites</h1> */}
+      {/* <div>
+      <FavRecipe isFav={true} />
+      </div> */}
+      
       {favoriteRecipes.length &&
         filteredFavoriteRecipes().map(({ recipe }) => {
             console.log('recipe', recipe);
