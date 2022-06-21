@@ -74,3 +74,7 @@ textarea {
 .title-single {
   font-size: 55px;
 }
+
+.fav-recipe-icon {
+  float: right;
+}

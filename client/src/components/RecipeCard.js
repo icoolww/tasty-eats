@@ -5,25 +5,51 @@ import FavRecipe from "./FavRecipe";
 import axios from "axios";
 
 export default function RecipeCard(props) {
-  const { title, prep_time, portion_size, image, directions, ingredient } =
+  const { title, prep_time, portion_size, image, directions, ingredient, id: recipe_id, user_id } =
     props.recipe || {};
   const ingredientArray = ingredient.split("\n");
   const directionsArray = directions.split("\n");
-  console.log("DIRECTIONS", ingredientArray);
+  // console.log("DIRECTIONS", ingredientArray);
   // const onClick = () => {
   //   props.onRecipeClick(props.recipe);
   // };
 
   // empty object
 
+  const [isSaved, setIsSaved] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8001/api/favorites/${props.recipe.id}`).then((res) => {
+      const data = res.data;
+      setIsSaved(data.isSaved);
+      setIsLoaded(true);
+    })
+  }, []);
+
   function handleFavRecipe(events) {
     console.log("props", props.recipe);
-
-    axios.post(`http://localhost:8001/api/favorites/1`).then((res) => {
-      //api call to server to then fav or unfav a recipe
-      //will probs need recipe ID
-      //will need logic before API call if fav or not
-    });
+    if (!isLoaded) {
+      return;
+    }
+    if (isSaved) {
+      axios.delete(`http://localhost:8001/api/favorites/${props.recipe.id}`).then((res) => {
+        //api call to server to then fav or unfav a recipe
+        //will probs need recipe ID
+        //will need logic before API call if fav or not
+        console.log('res delete', res);
+        setIsSaved(!(res.data.message === 'success'));
+      });
+    } else {
+      const body = { user_id: 2, recipe_id: props.recipe.id };
+      axios.post(`http://localhost:8001/api/favorites`, body).then((res) => {
+        //api call to server to then fav or unfav a recipe
+        //will probs need recipe ID
+        //will need logic before API call if fav or not
+        console.log('res save', res);
+        setIsSaved(res.data.message === 'success');
+      });
+    }
   }
 
   return (
@@ -70,7 +96,7 @@ export default function RecipeCard(props) {
         </ul>
         {/* <h1 className="text-oatmeal font-medium">{directions}</h1> */}
 
-        <FavRecipe onClick={handleFavRecipe} isFav={true} />
+        <FavRecipe onClick={handleFavRecipe} isFav={isSaved} />
       </div>
     </div>
   );

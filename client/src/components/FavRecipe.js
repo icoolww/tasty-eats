@@ -4,8 +4,21 @@ import React from "react";
 //button that sends an api request that saves the recipe
 
 export default function FavRecipe(props) {
+
+  // function handleFavRecipe(events) {
+  //   // console.log("props", props.recipe);
+  //   if (props.isFav) {
+      
+  //   } else {
+  //     axios.post(`http://localhost:8001/api/favorites/1`).then((res) => {
+  //       //api call to server to then fav or unfav a recipe
+  //       //will probs need recipe ID
+  //       //will need logic before API call if fav or not
+  //     });
+  //   }
+  // }
   return (
-    <div onClick={props.onClick}>
+    <div className="fav-recipe-icon" onClick={props.onClick}>
       {props.isFav ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

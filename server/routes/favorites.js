@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const db = require("../db");
-
-
 //READ ALL FAVORITES
-
 router.get("/", (req, res) => {
   db.query(`SELECT * FROM users_favorites;`)
-    .then((data) => {
+    .then(async (data) => {
       const favorites_data = data.rows;
 
-      res.json(favorites_data);
+      const favorited_recipes = await Promise.all(favorites_data.map(async (favorite_data) => {
+        const recipe_data = await db.query(`SELECT * FROM recipes where id=${favorite_data.recipe_id}`)
+        return { ...favorite_data, recipe: recipe_data.rows[0] };
+      }));
+        
+      res.status(200).json(favorited_recipes);
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
@@ -19,9 +21,10 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   console.log("creatingFav")
-  db.query(`INSERT INTO users_favorites (user_id, recipe_id) VALUES (2,1) RETURNING *`)
+  const { user_id, recipe_id } = req.body;
+  console.log(user_id, recipe_id);
+  db.query(`INSERT INTO users_favorites (user_id, recipe_id) VALUES (${user_id},${recipe_id});`)
   .then((data) => {
-    console.log(data.rows)
     res.status(200).json({message:"success"}) 
     ;
   })
@@ -33,7 +36,8 @@ router.post("/", (req, res) => {
 } )
 
 router.delete("/:id", (req, res) => {
-  db.query(`DELETE FROM users_favorites WHERE recipe_id=1;`)
+  const { id } = req.params;
+  db.query(`DELETE FROM users_favorites WHERE recipe_id=${id};`)
   .then((data) => {
     res.status(200).json({message:"success"}) 
     ;
@@ -41,6 +45,20 @@ router.delete("/:id", (req, res) => {
   //need to add where statement for specific user 
   .catch((err) => {
     res.status(500).json({ error: err });
+  });
+} )
+
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  console.log('coming to this get favorited recipe');
+  db.query(`SELECT * FROM users_favorites WHERE recipe_id=${id};`)
+  .then((data) => {
+    res.status(200).json({isSaved: data.rows.length !== 0});
+  })
+  //need to add where statement for specific user 
+  .catch((err) => {
+    res.status(500).json({ error: err, isSaved: false });
   });
 } )
 
