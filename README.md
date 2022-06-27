@@ -78,3 +78,9 @@ __Database:__ Postgres
 !['ERD'](client/src/docs/ERD.png)
 
 ## Finished App Screenshots
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/my%20recipe%20page.png)
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/main%20page.png)
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/create%20recipe%20page.png)
+
+
+
