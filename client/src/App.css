@@ -47,7 +47,7 @@ textarea {
 }
 
 .static {
-  position: sticky;
+  position: fixed;
   z-index: 1;
   top: 0;
   width: 100%;
@@ -68,6 +68,7 @@ textarea {
 
 .content {
   padding-left: 300px;
+  margin-top: 150px;
 }
 
 /* handling single page recipe card */
