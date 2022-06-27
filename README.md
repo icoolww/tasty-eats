@@ -77,8 +77,4 @@ __Database:__ Postgres
 
 !['ERD'](client/src/docs/ERD.png)
 
-## Routes
-
-!['Routes'](client/src/docs/Routes.jpg)
-
 ## Finished App Screenshots
