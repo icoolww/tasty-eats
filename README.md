@@ -48,8 +48,8 @@ User:
 Install dependencies with `npm install`.
 
 ## Running Webpack Development
-backend : in server directory, node index.js
-frontend: in client directory, npm start
+**Backend**: in server directory, node index.js
+**Frontend**: in client directory, npm start
 
 
 ## Project Stack
