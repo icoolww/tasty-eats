@@ -43,14 +43,13 @@ User:
 
 - Authenticated user can see their indicated favourite maps and maps they've contributed to
 
-## Warnings & Tips
 
 ## Setup
 Install dependencies with `npm install`.
-## Running Webpack Development Server
-```sh
-npm start
-```
+
+## Running Webpack Development
+backend : in server directory, node index.js
+frontend: in client directory, npm start
 
 
 ## Project Stack
