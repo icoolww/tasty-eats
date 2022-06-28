@@ -43,14 +43,13 @@ User:
 
 - Authenticated user can see their indicated favourite maps and maps they've contributed to
 
-## Warnings & Tips
 
 ## Setup
 Install dependencies with `npm install`.
-## Running Webpack Development Server
-```sh
-npm start
-```
+
+## Running Webpack Development
+**Backend**: in server directory, node index.js
+**Frontend**: in client directory, npm start
 
 
 ## Project Stack
@@ -78,3 +77,9 @@ __Database:__ Postgres
 !['ERD'](client/src/docs/ERD.png)
 
 ## Finished App Screenshots
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/my%20recipe%20page.png)
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/main%20page.png)
+![Screenshot](https://github.com/icoolww/tasty-eats/blob/main/client/public/docs/create%20recipe%20page.png)
+
+
+
