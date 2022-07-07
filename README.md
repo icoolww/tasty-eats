@@ -10,7 +10,6 @@ It was build by Kelly Atmore, William Wijaya, Dominik Wrona
 
 ## User Stories
 
-User:
 - As a user, I can search for a specific recipe. 
 
 - As a user, I can access all the recipes. 
